@@ -1,38 +1,54 @@
-/* TÔDCACHOS Brand Tokens — Hermelina Pinho's Vision */
+/* TODCACHOS Brand Tokens. Quiet Luxury light system. Hermelina Pinho */
 
 @import "tailwindcss";
 
 @layer base {
   :root {
-    --background: #0d0d0d;
-    --foreground: #fafaf8;
-    --gold: #b1823c;
-    --gold-light: #cda93c;
-    --gold-dark: #8b6914;
-    --dark-surface: #141414;
-    --dark-border: rgba(177, 130, 60, 0.2);
+    /* Quiet luxury light palette: warm neutral, airy */
+    --canvas: #f4efe9;        /* off-white cru, main bg */
+    --canvas-2: #ece4da;      /* sand, alternating sections */
+    --canvas-3: #e3d8ca;      /* deeper sand for slight contrast */
+    --ink: #2b2521;           /* near-black warm brown, primary text */
+    --ink-soft: #6b6157;      /* secondary text */
+    --ink-faint: #9a9086;     /* captions, faint labels */
+    --line: #d8cec1;          /* hairlines */
+    --accent: #a9805a;        /* soft terracotta-bronze */
+    --accent-deep: #8a6544;   /* accent for text on light, AA contrast */
+
+    /* legacy aliases kept so any leftover class still resolves */
+    --background: #f4efe9;
+    --foreground: #2b2521;
+    --gold: #a9805a;
+    --gold-light: #c8a988;
+    --gold-dark: #8a6544;
   }
 }
 
 @theme {
-  --color-gold: #b1823c;
-  --color-gold-light: #cda93c;
-  --color-gold-dark: #8b6914;
-  --color-dark-bg: #0d0d0d;
-  --color-dark-card: #141414;
+  --color-canvas: #f4efe9;
+  --color-canvas-2: #ece4da;
+  --color-canvas-3: #e3d8ca;
+  --color-ink: #2b2521;
+  --color-ink-soft: #6b6157;
+  --color-ink-faint: #9a9086;
+  --color-line: #d8cec1;
+  --color-accent: #a9805a;
+  --color-accent-deep: #8a6544;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #0d0d0d;
-  color: #fafaf8;
+  background-color: var(--canvas);
+  color: var(--ink);
 }
 
 body {
-  background-color: #0d0d0d;
-  color: #fafaf8;
+  background-color: var(--canvas);
+  color: var(--ink);
   overflow-x: hidden;
   font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .font-serif {
@@ -43,32 +59,51 @@ body {
   font-family: var(--font-body), sans-serif;
 }
 
-/* Custom luxury scrollbar */
+.font-accent {
+  font-family: var(--font-accent), Georgia, serif;
+}
+
+/* Delicate display: lighter weight, tighter tracking, generous leading on body */
+.display-delicate {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+/* Soft, slow reveal helper (used where GSAP/Framer not present) */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-soft {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealSoft 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  @keyframes revealSoft {
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Custom quiet scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: var(--canvas-2);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #cdbfae;
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #b1823c;
+  background: var(--accent);
 }
 
-/* TÔDCACHOS accent border for hover states */
+::selection {
+  background: var(--accent);
+  color: var(--canvas);
+}
+
+/* Thin accent rule */
 .accent-border {
-  border: 1px solid #b1823c;
-}
-
-/* Gold text gradient */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #cda93c 0%, #b1823c 50%, #8b6914 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border: 1px solid var(--accent);
 }

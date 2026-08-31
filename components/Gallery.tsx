@@ -90,7 +90,8 @@ export function Gallery() {
       if (!items || items.length === 0) return;
 
       items.forEach((item) => {
-        const magnitude = Number(item.dataset.parallax ?? 0);
+        // Gentle parallax: dampen stored magnitudes for a soft, luxe drift
+        const magnitude = Number(item.dataset.parallax ?? 0) * 0.55;
         if (!magnitude) return;
 
         gsap.fromTo(
@@ -116,17 +117,16 @@ export function Gallery() {
     <section
       id="galeria"
       ref={sectionRef}
-      className="py-28 md:py-40 bg-[#0d0d0d] text-[#fafaf8] relative border-t border-zinc-900"
+      className="py-28 md:py-40 bg-[var(--canvas-2)] text-[var(--ink)] relative border-t border-[var(--line)]"
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-12">
         {/* Header — simple, no generic eyebrow */}
         <header className="mb-14 sm:mb-20">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-[#fafaf8]">
-            <span className="text-[#b1823c]">PORT</span>FÓLIO
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-[var(--ink)]">
+            Portfólio
           </h2>
-          <p className="font-sans text-base sm:text-lg text-zinc-400 font-light max-w-[60ch] leading-relaxed mt-5">
-            Resultados reais de cortes, tratamentos e iluminação desenvolvidos para
-            valorizar a textura natural, assinados por Hermelina Pinho.
+          <p className="font-sans text-base sm:text-lg text-[var(--ink-soft)] font-light max-w-[60ch] leading-relaxed mt-5">
+            Resultados reais de cortes, tratamentos e iluminação desenvolvidos para valorizar a textura natural, assinados por Hermelina Pinho.
           </p>
         </header>
 
@@ -135,12 +135,12 @@ export function Gallery() {
           {galleryImages.map((item) => (
             <figure
               key={item.id}
-              className={`group relative overflow-hidden border border-zinc-800/80 hover:border-[#b1823c] transition-colors duration-500 ${item.span}`}
+              className={`group relative overflow-hidden border border-[var(--line)] hover:border-[var(--accent)] transition-colors duration-500 ${item.span}`}
               data-gallery-image=""
               data-parallax={item.parallax}
               style={{ willChange: 'transform' }}
             >
-              <div className={`relative w-full ${item.aspect} bg-zinc-900 overflow-hidden`}>
+              <div className={`relative w-full ${item.aspect} bg-[var(--canvas-3)] overflow-hidden`}>
                 <Image
                   src={item.src}
                   alt={item.title}
@@ -149,18 +149,18 @@ export function Gallery() {
                   className="object-cover object-center grayscale-[10%] group-hover:grayscale-0 group-hover:scale-[1.02] transition-[transform,filter] duration-[700ms] ease-out"
                 />
 
-                {/* Dark gradient overlay: top→transparent, fades in on hover */}
+                {/* Soft light scrim: slides up on hover */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-t from-[rgba(43,37,33,0.12)] via-[rgba(43,37,33,0.04)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 />
 
                 {/* Caption: slides up from bottom on hover */}
                 <figcaption className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-                  <span className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#b1823c] block mb-1.5">
+                  <span className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[var(--accent-deep)] block mb-1.5">
                     {item.category}
                   </span>
-                  <h3 className="font-serif text-lg sm:text-xl text-[#fafaf8] font-light leading-snug">
+                  <h3 className="font-serif text-lg sm:text-xl text-[var(--ink)] font-light leading-snug">
                     {item.title}
                   </h3>
                 </figcaption>
@@ -172,10 +172,10 @@ export function Gallery() {
         {/* Footer link */}
         <div className="mt-16 text-center">
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/todcachos.pt"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-xs font-sans uppercase tracking-[0.25em] text-zinc-400 hover:text-[#b1823c] transition-colors duration-300"
+            className="inline-flex items-center text-xs font-sans uppercase tracking-[0.25em] text-[var(--ink-soft)] hover:text-[var(--accent-deep)] transition-colors duration-300"
           >
             Acompanhe mais transformações no Instagram &rarr;
           </a>

@@ -20,28 +20,31 @@ export function Hero() {
     () => {
       if (shouldReduceMotion) return;
 
-      // Video slow zoom-out as you scroll away
-      gsap.to(videoRef.current, {
-        scale: 1.18,
-        yPercent: 8,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      });
+      // Video gentle scale as you scroll away
+      gsap.fromTo(
+        videoRef.current,
+        { scale: 1 },
+        {
+          scale: 1.08,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      );
 
-      // Giant wordmark drifts up faster than the video (depth)
+      // Wordmark drifts up gently
       gsap.to(wordmarkRef.current, {
-        yPercent: -40,
-        opacity: 0,
+        yPercent: -25,
+        opacity: 0.6,
         ease: 'none',
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: '60% top',
+          end: '70% top',
           scrub: true,
         },
       });
@@ -55,8 +58,8 @@ export function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1,
-        delay: 0.3 + i * 0.12,
+        duration: 1.2,
+        delay: 0.4 + i * 0.15,
         ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       },
     }),
@@ -65,59 +68,91 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[100dvh] w-full overflow-hidden bg-[#0a0806]"
+      className="relative h-[100dvh] w-full overflow-hidden"
     >
-      {/* Fullscreen video, covers everything */}
+      {/* Fullscreen video */}
       <video
         ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
-        poster="/images/about-salon.jpg"
+        poster="/images/hero-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover object-center will-change-transform"
       >
         <source src="/videos/hero-bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Cinematic grade: warm the shadows, deepen the corners, keep the center readable */}
-      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_35%,transparent_0%,rgba(10,8,6,0.35)_55%,rgba(10,8,6,0.85)_100%)]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0806] via-transparent to-[#0a0806]/40" />
-      <div className="absolute inset-0 bg-[#4a2f12] mix-blend-color opacity-[0.12]" />
+      {/* Gentle warm wash — softer, less crushed-black */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(244,239,233,0.08) 0%, rgba(169,128,90,0.10) 40%, rgba(43,37,33,0.18) 100%)',
+        }}
+      />
+
+      {/* Subtle top shadow for rule legibility */}
+      <div
+        className="absolute inset-x-0 top-0 h-32"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(43,37,33,0.30) 0%, transparent 100%)',
+        }}
+      />
+
+      {/* Quiet luxury transition: dissolve video into light canvas */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-[35%]"
+        style={{
+          background:
+            'linear-gradient(180deg, transparent 0%, var(--canvas) 100%)',
+        }}
+      />
 
       {/* Thin brand rule top */}
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-10 lg:px-16 pt-7">
-        <span className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-white/70">
+        <span
+          className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em]"
+          style={{ color: 'rgba(244,239,233,0.75)' }}
+        >
           Hermelina Pinho
         </span>
-        <span className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-white/70">
+        <span
+          className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em]"
+          style={{ color: 'rgba(244,239,233,0.75)' }}
+        >
           Lisboa
         </span>
       </div>
 
       {/* Content: bottom-anchored, editorial */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-10 lg:px-16">
-        {/* Giant wordmark that bleeds edge-to-edge */}
+      <div className="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-10 lg:px-16">
+        {/* Giant wordmark — delicate, airy */}
         <motion.h1
           ref={wordmarkRef}
           custom={0}
           variants={line}
           initial="hidden"
           animate="visible"
-          className="font-[var(--font-display)] font-bold text-white leading-[0.82] tracking-[-0.03em] text-[clamp(3.2rem,17vw,15rem)] mb-6 sm:mb-8"
-          style={{ textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
+          className="font-[var(--font-display)] text-[clamp(3rem,17vw,15rem)] leading-[0.82] tracking-[-0.02em] font-normal mb-8 sm:mb-10"
+          style={{
+            color: '#f4efe9',
+            textShadow: '0 2px 60px rgba(43,37,33,0.25)',
+          }}
         >
           TÔDCACHOS
         </motion.h1>
 
-        {/* Tagline + CTA row, split baseline */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 border-t border-white/15 pt-8">
+        {/* Tagline + CTA row */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 border-t border-white/20 pt-8">
           <motion.p
             custom={1}
             variants={line}
             initial="hidden"
             animate="visible"
-            className="font-[var(--font-accent)] italic text-white/90 text-2xl sm:text-3xl lg:text-4xl leading-[1.15] max-w-2xl"
+            className="font-[var(--font-accent)] italic text-[clamp(1.25rem,3vw,1.75rem)] leading-[1.2] max-w-2xl"
+            style={{ color: 'rgba(244,239,233,0.92)' }}
           >
             não é só curvatura, é história, é movimento, é autenticidade.
           </motion.p>
@@ -127,20 +162,27 @@ export function Hero() {
             variants={line}
             initial="hidden"
             animate="visible"
-            className="flex items-center gap-6 shrink-0"
+            className="flex items-center gap-8 shrink-0"
           >
             <a
               href="#servicos"
-              className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] text-white/70 hover:text-white transition-colors border-b border-white/30 hover:border-white pb-1"
+              className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] pb-1 border-b transition-colors duration-300"
+              style={{
+                color: 'rgba(244,239,233,0.85)',
+                borderColor: 'rgba(244,239,233,0.40)',
+              }}
             >
               Ver Serviços
             </a>
             <a
               href="#contactos"
-              className="group relative font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] text-[#0a0806] bg-[#e8c789] px-7 py-4 overflow-hidden transition-colors"
+              className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] px-7 py-4 transition-colors duration-300"
+              style={{
+                color: '#2b2521',
+                backgroundColor: '#e8dcc8',
+              }}
             >
-              <span className="relative z-10">Marcar Horário</span>
-              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+              Marcar Horário
             </a>
           </motion.div>
         </div>

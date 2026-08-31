@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt" className={`${imbue.variable} ${arimo.variable} ${radley.variable}`}>
-      <body className="bg-[#0d0d0d] text-[#fafaf8] antialiased selection:bg-[#b1823c] selection:text-white">
+      <body className="bg-[#f4efe9] text-[#2b2521] antialiased">
         {children}
       </body>
     </html>

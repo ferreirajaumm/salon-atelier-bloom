@@ -35,9 +35,9 @@ export function Owner() {
     // Subtle parallax on the founder photo
     gsap.fromTo(
       photoRef.current,
-      { yPercent: -6 },
+      { yPercent: -3 },
       {
-        yPercent: 6,
+        yPercent: 3,
         ease: 'none',
         scrollTrigger: {
           trigger: photoWrapRef.current,
@@ -53,13 +53,13 @@ export function Owner() {
       const lines = bioRef.current.querySelectorAll('.reveal-line');
       gsap.fromTo(
         lines,
-        { opacity: 0, y: 32 },
+        { opacity: 0, y: 28 },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          stagger: 0.14,
+          duration: 1.1,
+          ease: 'expo.out',
+          stagger: 0.16,
           scrollTrigger: {
             trigger: bioRef.current,
             start: 'top 78%',
@@ -69,18 +69,18 @@ export function Owner() {
       );
     }
 
-    // Specialties grid: stagger from below with softer timing
+    // Specialties: slow, soft stagger
     if (specialtiesRef.current) {
       const items = specialtiesRef.current.querySelectorAll('.specialty-item');
       gsap.fromTo(
         items,
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 14 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
-          ease: 'power3.out',
-          stagger: 0.08,
+          duration: 0.9,
+          ease: 'expo.out',
+          stagger: 0.1,
           scrollTrigger: {
             trigger: specialtiesRef.current,
             start: 'top 82%',
@@ -95,64 +95,89 @@ export function Owner() {
     <section
       ref={sectionRef}
       id="fundadora"
-      className="py-28 md:py-40 bg-[#0d0d0d] text-[#fafaf8] relative border-t border-zinc-900 overflow-hidden"
+      className="relative overflow-hidden py-32 md:py-48"
+      style={{ backgroundColor: 'var(--canvas)', color: 'var(--ink)' }}
     >
-      <div className="max-w-6xl mx-auto px-6 sm:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
 
-          {/* Photo Column — left, parallax on scroll */}
+          {/* Photo Column — left, subtle parallax */}
           <div
             ref={photoWrapRef}
-            className="lg:col-span-6 order-1 relative"
+            className="lg:col-span-5 order-1 lg:sticky lg:top-32"
           >
-            <div className="relative aspect-[3/4] w-full overflow-hidden border border-[#b1823c]">
-              <div ref={photoRef} className="absolute inset-0 w-full h-[115%] -top-[7%]">
+            <div
+              className="relative aspect-[3/4] w-full overflow-hidden"
+              style={{ border: '1px solid var(--line)' }}
+            >
+              <div ref={photoRef} className="absolute inset-0 w-full h-[110%] -top-[5%]">
                 <Image
-                  src="/images/owner-photo.jpg"
-                  alt="Hermelina Pinho — fundadora da Tôdcachos"
+                  src="/images/canva-img-3.jpg"
+                  alt="Hermelina Pinho, fundadora da Tôdcachos"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover object-center"
                   priority
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
 
-          {/* Bio Column — right, staggered reveal */}
-          <div
-            ref={bioRef}
-            className="lg:col-span-6 order-2 relative pl-6 sm:pl-8 border-l-4 border-[#b1823c]"
-          >
-            <h2 className="reveal-line font-serif text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.05] mb-8 tracking-tight">
+          {/* Bio Column — right, generous whitespace */}
+          <div ref={bioRef} className="lg:col-span-7 order-2 lg:pl-4">
+            {/* Section label */}
+            <span
+              className="reveal-line block font-sans text-[10px] uppercase tracking-[0.35em] mb-8"
+              style={{ color: 'var(--accent-deep)' }}
+            >
+              A Fundadora
+            </span>
+
+            <h2
+              className="reveal-line font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-[0.95] mb-12 tracking-tight"
+              style={{ color: 'var(--ink)' }}
+            >
               HERMELINA PINHO
             </h2>
 
-            {founderStory.map((paragraph, idx) => (
-              <p
-                key={idx}
-                className="reveal-line font-sans text-base text-zinc-300 font-light leading-relaxed mb-6 max-w-[65ch]"
-              >
-                {paragraph}
-              </p>
-            ))}
+            <div className="max-w-[60ch]">
+              {founderStory.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="reveal-line font-sans text-base font-light leading-relaxed mb-6 last:mb-0"
+                  style={{ color: 'var(--ink-soft)' }}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
-            {/* Specialties list */}
+            {/* Specialties */}
             <div
               ref={specialtiesRef}
-              className="mt-8 pt-8 border-t border-[#b1823c]/30"
+              className="mt-16 pt-10"
+              style={{ borderTop: '1px solid var(--line)' }}
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              <span
+                className="specialty-item block font-sans text-[10px] uppercase tracking-[0.35em] mb-8"
+                style={{ color: 'var(--accent-deep)' }}
+              >
+                Especialidades
+              </span>
+              <ul className="flex flex-col">
                 {specialties.map((item, i) => (
-                  <p
+                  <li
                     key={i}
-                    className="specialty-item font-sans text-[11px] uppercase tracking-[0.18em] text-[#cda93c] font-medium"
+                    className="specialty-item py-4 font-sans text-[11px] uppercase tracking-[0.22em] font-medium"
+                    style={{
+                      color: 'var(--accent-deep)',
+                      borderBottom: i === specialties.length - 1 ? 'none' : '1px solid var(--line)',
+                    }}
                   >
                     {item}
-                  </p>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
 

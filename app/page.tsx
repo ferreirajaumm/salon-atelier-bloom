@@ -1,6 +1,7 @@
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 import { Owner } from '@/components/Owner';
+import { Values } from '@/components/Values';
 import { Services } from '@/components/Services';
 import { Gallery } from '@/components/Gallery';
 import { Reels } from '@/components/Reels';
@@ -8,26 +9,29 @@ import { Footer } from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-[#fafaf8] overflow-x-hidden">
-      {/* 1. Hero Full-Screen com Vídeo de Fundo */}
+    <main className="min-h-screen bg-[var(--canvas)] text-[var(--ink)] overflow-x-hidden">
+      {/* 1. Hero: fullscreen video dissolving into light */}
       <Hero />
 
-      {/* 2. Secção "Sobre o Salão" */}
+      {/* 2. Manifesto: word-by-word reveal on light */}
       <About />
 
-      {/* 3. Secção "Sobre a Dona" */}
+      {/* 3. A Fundadora: Hermelina Pinho story */}
       <Owner />
 
-      {/* 4. Secção "Serviços" */}
+      {/* 4. Filosofia: the four values */}
+      <Values />
+
+      {/* 5. Serviços: editorial index + featured pan */}
       <Services />
 
-      {/* 5. Galeria com Parallax */}
+      {/* 6. Portfólio: editorial gallery with slow parallax */}
       <Gallery />
 
-      {/* 6. Secção de Vídeos / Reels */}
+      {/* 7. Processo: reels linking to Instagram */}
       <Reels />
 
-      {/* 7. Footer com Contactos, Horário, Redes e Mapa */}
+      {/* 8. Contacto: calm footer */}
       <Footer />
     </main>
   );
