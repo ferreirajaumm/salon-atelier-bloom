@@ -17,7 +17,7 @@ const founderStory = [
 
 const specialties = [
   'Cortes para Cabelos Afro, Cacheados & Crespos',
-  'Especialista em Loiros — 15 anos',
+  'Especialista em Loiros, 15 anos',
   'Madeixas & Iluminados de Autor',
   'Hidratações Personalizadas por Tipo de Cabelo',
   'Soltura de Cachos & Alinhamento',

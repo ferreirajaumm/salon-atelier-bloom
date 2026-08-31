@@ -126,7 +126,7 @@ export function Gallery() {
           </h2>
           <p className="font-sans text-base sm:text-lg text-zinc-400 font-light max-w-[60ch] leading-relaxed mt-5">
             Resultados reais de cortes, tratamentos e iluminação desenvolvidos para
-            valorizar a textura natural — assinados por Thay Silva.
+            valorizar a textura natural, assinados por Hermelina Pinho.
           </p>
         </header>
 

@@ -2,15 +2,13 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useReducedMotion } from 'framer-motion';
-import { Clock, ArrowRight, Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-type ServiceSize = 'sm' | 'md' | 'lg' | 'xl';
 type ServiceCategory = 'Tratamentos' | 'Finalização' | 'Rituais' | 'Terapia';
 
 interface ServiceItem {
@@ -23,7 +21,6 @@ interface ServiceItem {
   duration: string;
   image: string;
   featured?: boolean;
-  size: ServiceSize;
 }
 
 const servicesList: ServiceItem[] = [
@@ -33,10 +30,10 @@ const servicesList: ServiceItem[] = [
     title: 'Cachoterapia',
     description:
       'Ritual exclusivo dedicado aos fios cacheados e crespos. Hidratação profunda, definição e respeito integral à curvatura natural.',
-    price: '40€',
+    price: '40',
+    priceSuffix: '€',
     duration: '60 min',
     image: '/images/canva-img-1.jpg',
-    size: 'lg',
   },
   {
     id: 'powerterapia',
@@ -44,11 +41,11 @@ const servicesList: ServiceItem[] = [
     title: 'Powerterapia',
     description:
       'Tratamento intensivo de recuperação para fios desvitalizados. Reposição de massa, força e brilho em sessão única.',
-    price: '70€',
+    price: '70',
+    priceSuffix: '€',
     duration: '90 min',
     image: '/images/canva-img-2.jpg',
     featured: true,
-    size: 'xl',
   },
   {
     id: 'chaterapia',
@@ -56,10 +53,10 @@ const servicesList: ServiceItem[] = [
     title: 'Chaterapia',
     description:
       'Terapia herbal infundida com chás nobres e ativos botânicos. Nutrição calmante para couro cabeludo e fios.',
-    price: '45€',
+    price: '45',
+    priceSuffix: '€',
     duration: '60 min',
     image: '/images/canva-img-3.jpg',
-    size: 'md',
   },
   {
     id: 'ozonioterapia',
@@ -67,10 +64,10 @@ const servicesList: ServiceItem[] = [
     title: 'Ozonioterapia',
     description:
       'Aplicação de ozono medicinal para oxigenação do couro cabeludo. Estimula crescimento, fortalece a raiz e revitaliza.',
-    price: '55€',
+    price: '55',
+    priceSuffix: '€',
     duration: '50 min',
     image: '/images/canva-img-4.jpg',
-    size: 'md',
   },
   {
     id: 'blends-oleos',
@@ -78,10 +75,10 @@ const servicesList: ServiceItem[] = [
     title: 'Blends de Óleos',
     description:
       'Misturas personalizadas de óleos vegetais prensados a frio. Nutrição ancestral, brilho espelhado e selagem dos fios.',
-    price: '35€',
+    price: '35',
+    priceSuffix: '€',
     duration: '40 min',
     image: '/images/canva-img-5.jpg',
-    size: 'sm',
   },
   {
     id: 'alta-frequencia',
@@ -89,11 +86,11 @@ const servicesList: ServiceItem[] = [
     title: 'Alta Frequência',
     description:
       'Eletroterapia que estimula a circulação e auxilia no tratamento de quedas e oleosidade excessiva.',
-    price: '60€',
+    price: '60',
+    priceSuffix: '€',
     duration: '45 min',
     image: '/images/canva-img-6.jpg',
     featured: true,
-    size: 'lg',
   },
   {
     id: 'definicao',
@@ -101,10 +98,10 @@ const servicesList: ServiceItem[] = [
     title: 'Definição',
     description:
       'Ativação técnica da curvatura com finalização profissional. Cachos definidos, sem frizz, com duração prolongada.',
-    price: '30€',
+    price: '30',
+    priceSuffix: '€',
     duration: '45 min',
     image: '/images/canva-img-7.jpg',
-    size: 'sm',
   },
   {
     id: 'secagem',
@@ -112,11 +109,10 @@ const servicesList: ServiceItem[] = [
     title: 'Secagem com Difusor',
     description:
       'Secagem técnica com difusor profissional. Cabelo seco rapidamente sem comprometer a definição dos cachos.',
-    price: '10€',
-    priceSuffix: '/ 20€',
+    price: '10',
+    priceSuffix: '€',
     duration: '30 min',
     image: '/images/canva-img-8.jpg',
-    size: 'sm',
   },
 ];
 
@@ -127,28 +123,6 @@ const categories: Array<'Todos' | ServiceCategory> = [
   'Rituais',
   'Terapia',
 ];
-
-// Bento span classes (asymmetric distribution across 12-col grid)
-const sizeToColSpan: Record<ServiceSize, string> = {
-  sm: 'md:col-span-4',
-  md: 'md:col-span-6',
-  lg: 'md:col-span-8',
-  xl: 'md:col-span-12',
-};
-
-const sizeToRowSpan: Record<ServiceSize, string> = {
-  sm: 'md:row-span-1',
-  md: 'md:row-span-1',
-  lg: 'md:row-span-2',
-  xl: 'md:row-span-1',
-};
-
-const sizeToHeight: Record<ServiceSize, string> = {
-  sm: 'h-[420px]',
-  md: 'h-[460px]',
-  lg: 'h-[580px]',
-  xl: 'h-[520px]',
-};
 
 function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -182,14 +156,14 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
   return (
     <section
       ref={wrapRef}
-      className="relative overflow-hidden bg-[#0a0a0a] border-y border-zinc-900"
+      className="relative overflow-hidden bg-[#0a0806] border-y border-zinc-900"
       aria-label="Serviços em destaque"
     >
       <div className="absolute top-12 left-6 sm:left-12 z-10 pointer-events-none">
-        <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#b1823c] font-semibold">
+        <span className="font-sans text-[10px] uppercase tracking-[0.35em] text-[#b1823c] font-medium">
           Em Destaque
         </span>
-        <h3 className="font-serif text-3xl sm:text-4xl font-light text-[#fafaf8] mt-2">
+        <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#fafaf8] mt-3 tracking-tight">
           Rituais de Autor
         </h3>
       </div>
@@ -198,7 +172,7 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
         ref={trackRef}
         className="flex h-[100dvh] items-center pl-[55vw] pr-[20vw] gap-12 will-change-transform"
       >
-        {services.map((service, i) => (
+        {services.map((service) => (
           <article
             key={service.id}
             className="relative shrink-0 w-[480px] h-[600px] bg-zinc-900/60 border border-zinc-800 hover:border-[#b1823c] transition-colors duration-500 overflow-hidden group"
@@ -216,7 +190,7 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
 
             <div className="relative h-full p-10 flex flex-col justify-end">
               <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#b1823c] mb-3">
-                {String(i + 1).padStart(2, '0')} — {service.category}
+                {service.category}
               </span>
               <h4 className="font-serif text-4xl font-light text-[#fafaf8] leading-tight mb-4">
                 {service.title}
@@ -224,22 +198,14 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
               <p className="font-sans text-sm text-zinc-300 font-light leading-relaxed mb-6 max-w-md">
                 {service.description}
               </p>
-              <div className="flex items-end justify-between pt-6 border-t border-zinc-700/60">
-                <div>
-                  <span className="font-sans text-[10px] uppercase tracking-widest text-zinc-500 block mb-1">
-                    A partir de
-                  </span>
-                  <span className="font-serif text-5xl text-[#b1823c] font-light">
-                    {service.price}
-                    {service.priceSuffix && (
-                      <span className="text-2xl text-zinc-400">{service.priceSuffix}</span>
-                    )}
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs text-zinc-400 font-sans">
-                  <Clock className="w-3.5 h-3.5 text-[#b1823c]" />
+              <div className="pt-6 border-t border-zinc-700/60">
+                <span className="font-serif text-5xl text-[#b1823c] font-light tabular-nums">
+                  {service.price}
+                  <span className="text-2xl">{service.priceSuffix}</span>
+                </span>
+                <span className="block font-sans text-[11px] uppercase tracking-[0.25em] text-zinc-500 mt-2">
                   {service.duration}
-                </div>
+                </span>
               </div>
             </div>
           </article>
@@ -249,115 +215,155 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
   );
 }
 
-function BentoCard({ service, index }: { service: ServiceItem; index: number }) {
-  const isLarge = service.size === 'lg' || service.size === 'xl';
+function ServiceRow({
+  service,
+  index,
+}: {
+  service: ServiceItem;
+  index: number;
+}) {
+  const rowRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const [imageVisible, setImageVisible] = useState(false);
+  const reduceMotion = useReducedMotion();
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduceMotion) return;
+    const rect = rowRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
 
   return (
-    <motion.article
+    <motion.div
+      ref={rowRef}
       layout
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
-      whileHover={{ scale: 1.005 }}
-      className={`group relative flex flex-col bg-zinc-900/50 border border-zinc-800 hover:border-[#b1823c] transition-colors duration-500 overflow-hidden ${sizeToColSpan[service.size]} ${sizeToRowSpan[service.size]} ${sizeToHeight[service.size]}`}
+      exit={{ opacity: 0, y: 8 }}
+      transition={{
+        duration: 0.4,
+        delay: Math.min(index * 0.04, 0.3),
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => !reduceMotion && setImageVisible(true)}
+      onMouseLeave={() => setImageVisible(false)}
+      className="group relative border-t border-zinc-800/60 last:border-b last:border-zinc-800/60"
     >
-      {/* Image */}
-      <div className={`relative w-full overflow-hidden bg-zinc-950 ${isLarge ? 'h-2/3' : 'h-1/2'}`}>
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
-        <span className="absolute top-5 left-5 px-3 py-1.5 bg-black/70 backdrop-blur-sm border border-white/10 text-[10px] uppercase tracking-[0.2em] text-[#b1823c] font-sans">
-          {service.category}
-        </span>
-      </div>
+      <div className="grid grid-cols-12 gap-4 sm:gap-8 items-baseline py-8 sm:py-10 px-2 sm:px-4 transition-colors duration-300 group-hover:bg-zinc-900/30">
+        {/* Number + Category */}
+        <div className="col-span-12 sm:col-span-2 flex items-baseline gap-3">
+          <span className="font-serif text-xs sm:text-sm text-zinc-600 tabular-nums">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-[#b1823c]">
+            {service.category}
+          </span>
+        </div>
 
-      {/* Content */}
-      <div className="flex-1 p-7 sm:p-8 flex flex-col justify-between">
-        <div>
-          <h3 className={`font-serif font-light text-[#fafaf8] leading-tight mb-3 ${isLarge ? 'text-3xl' : 'text-2xl'}`}>
+        {/* Title + Description */}
+        <div className="col-span-12 sm:col-span-7">
+          <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light text-[#fafaf8] leading-tight tracking-tight">
             {service.title}
           </h3>
-          <p className="font-sans text-sm text-zinc-400 font-light leading-relaxed line-clamp-3">
+          <p className="font-sans text-sm text-zinc-500 font-light leading-relaxed mt-2 max-w-xl">
             {service.description}
           </p>
         </div>
 
-        <div className="pt-5 mt-5 border-t border-zinc-800/80 flex items-end justify-between gap-4">
-          <div>
-            <span className="font-sans text-[9px] uppercase tracking-[0.2em] text-zinc-500 block mb-1">
-              Valor
-            </span>
-            <span className="font-serif text-3xl text-[#b1823c] font-light leading-none">
+        {/* Duration + Price */}
+        <div className="col-span-12 sm:col-span-3 sm:text-right flex sm:block items-baseline justify-between">
+          <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-zinc-600">
+            {service.duration}
+          </span>
+          <div className="flex items-baseline gap-1 sm:justify-end">
+            <span className="font-serif text-3xl sm:text-4xl text-[#b1823c] font-light tabular-nums leading-none">
               {service.price}
-              {service.priceSuffix && (
-                <span className="text-lg text-zinc-500 ml-1">{service.priceSuffix}</span>
-              )}
             </span>
-          </div>
-          <div className="flex flex-col items-end gap-3">
-            <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-zinc-500 font-sans">
-              <Clock className="w-3 h-3 text-[#b1823c]" />
-              {service.duration}
-            </div>
-            <a
-              href="#contactos"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#b1823c] text-black font-sans text-[10px] uppercase tracking-[0.2em] font-semibold hover:bg-[#c8994d] transition-colors"
-            >
-              Marcar <ArrowRight className="w-3 h-3" />
-            </a>
+            {service.priceSuffix && (
+              <span className="font-serif text-xl text-[#cda93c] font-light">
+                {service.priceSuffix}
+              </span>
+            )}
           </div>
         </div>
       </div>
-    </motion.article>
+
+      {/* Hover image reveal */}
+      {!reduceMotion && (
+        <motion.div
+          aria-hidden="true"
+          initial={false}
+          animate={{
+            opacity: imageVisible ? 1 : 0,
+            scale: imageVisible ? 1 : 0.92,
+          }}
+          transition={{ duration: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="pointer-events-none hidden md:block absolute top-1/2 -translate-y-1/2 right-[28%] z-20 w-[260px] h-[320px] overflow-hidden border border-zinc-800"
+          style={{
+            x: useTransform(mouseX, (v) => v - 130),
+            y: useTransform(mouseY, (v) => v - 160),
+          }}
+        >
+          <Image
+            src={service.image}
+            alt=""
+            fill
+            sizes="260px"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </motion.div>
+      )}
+    </motion.div>
   );
 }
 
 export function Services() {
-  const [selectedCategory, setSelectedCategory] = useState<'Todos' | ServiceCategory>('Todos');
+  const [selectedCategory, setSelectedCategory] =
+    useState<'Todos' | ServiceCategory>('Todos');
 
-  const filtered = selectedCategory === 'Todos'
-    ? servicesList
-    : servicesList.filter((s) => s.category === selectedCategory);
+  const filtered =
+    selectedCategory === 'Todos'
+      ? servicesList
+      : servicesList.filter((s) => s.category === selectedCategory);
 
   const featured = servicesList.filter((s) => s.featured);
 
   return (
-    <section id="servicos" className="bg-[#0d0d0d] text-[#fafaf8] relative border-t border-zinc-900">
+    <section
+      id="servicos"
+      className="bg-[#0d0d0d] text-[#fafaf8] relative border-t border-zinc-900"
+    >
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 pt-28 md:pt-40 pb-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-zinc-800/80">
-          <div>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#fafaf8] tracking-tight">
-              Serviços
-            </h2>
-          </div>
-          <p className="font-sans text-sm text-zinc-400 font-light max-w-md leading-relaxed">
-            Procedimentos autorais para cacheados, crespos e afros. Cada ritual é desenhado para
-            respeitar a curvatura, a textura e a identidade de cada fio.
-          </p>
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 pt-28 md:pt-40 pb-10">
+        <div className="pb-10 border-b border-zinc-800/80">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#fafaf8] tracking-tight">
+            Serviços
+          </h2>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap items-center gap-3 mt-10">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 mt-10">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`relative px-5 py-2.5 text-[11px] uppercase font-sans tracking-[0.2em] transition-colors duration-300 ${
+                className={`relative font-sans text-[11px] uppercase tracking-[0.25em] transition-colors duration-300 py-1 ${
                   isActive
-                    ? 'bg-[#b1823c] text-black font-semibold'
-                    : 'bg-transparent text-zinc-400 border border-zinc-800 hover:border-zinc-600 hover:text-white'
+                    ? 'text-[#b1823c]'
+                    : 'text-zinc-500 hover:text-zinc-200'
                 }`}
               >
                 {cat}
+                {isActive && (
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-px bg-[#b1823c]" />
+                )}
               </button>
             );
           })}
@@ -371,25 +377,18 @@ export function Services() {
         </div>
       )}
 
-      {/* Asymmetric Bento Grid */}
+      {/* Service Index */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 pb-28">
-        <div className="flex items-center justify-between mb-10">
-          <h3 className="font-serif text-2xl sm:text-3xl font-light text-[#fafaf8] flex items-center gap-3">
-            <Sparkles className="w-4 h-4 text-[#b1823c]" />
+        <div className="mb-8">
+          <h3 className="font-serif text-2xl sm:text-3xl font-light text-[#fafaf8] tracking-tight">
             Carta Completa
           </h3>
-          <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-            {filtered.length} {filtered.length === 1 ? 'serviço' : 'serviços'}
-          </span>
         </div>
 
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-min"
-        >
+        <motion.div layout>
           <AnimatePresence mode="popLayout">
             {filtered.map((service, i) => (
-              <BentoCard key={service.id} service={service} index={i} />
+              <ServiceRow key={service.id} service={service} index={i} />
             ))}
           </AnimatePresence>
         </motion.div>
@@ -406,9 +405,9 @@ export function Services() {
 
       {/* Booking Banner */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 pb-28">
-        <div className="relative p-8 sm:p-12 bg-zinc-900/60 border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden">
-          <div className="relative z-10 max-w-xl">
-            <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#b1823c] font-semibold block mb-3">
+        <div className="relative p-8 sm:p-12 bg-zinc-900/60 border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="max-w-xl">
+            <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#b1823c] font-medium block mb-3">
               Marcações
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl text-white font-light mb-2">
@@ -420,9 +419,9 @@ export function Services() {
           </div>
           <a
             href="#contactos"
-            className="relative z-10 inline-flex items-center justify-center px-8 py-4 bg-[#b1823c] text-black font-sans text-[11px] uppercase tracking-[0.2em] font-semibold hover:bg-[#c8994d] transition-colors shrink-0"
+            className="inline-flex items-center justify-center px-8 py-4 bg-[#b1823c] text-black font-sans text-[11px] uppercase tracking-[0.2em] font-semibold hover:bg-[#cda93c] transition-colors shrink-0"
           >
-            Fazer Marcação <ArrowRight className="w-3.5 h-3.5 ml-2" />
+            Fazer Marcação
           </a>
         </div>
       </div>

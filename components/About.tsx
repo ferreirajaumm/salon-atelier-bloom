@@ -113,13 +113,13 @@ export function About() {
 
             <p className="reveal-line font-serif text-xl sm:text-2xl text-[#fafaf8]/90 font-light leading-relaxed mb-8">
               TÔDCACHOS NASCEU paRA MOSTRAR AO MUNDO O PODER DE UMA
-              CURVATURA — nasceu para dar voz a algo que durante muito
+              CURVATURA, nasceu para dar voz a algo que durante muito
               tempo ficou escondido.
             </p>
 
             <p className="reveal-line font-sans text-base text-zinc-400 font-light leading-relaxed mb-6">
               Em cada cacho existe uma identidade. Em cada curvatura, uma
-              história. Por isso a Tôdcachos não é apenas um salão — é um
+              história. Por isso a Tôdcachos não é apenas um salão, é um
               movimento. Um espaço onde o cabelo cacheado, crespo e afro
               deixa de ser apenas textura e passa a ser linguagem.
             </p>
@@ -127,8 +127,8 @@ export function About() {
             <p className="reveal-line font-sans text-base text-zinc-400 font-light leading-relaxed mb-12">
               Aqui a curvatura é respeitada no corte, no cuidado, na
               finalização. Nada é domado, nada é apagado. Cada fio é
-              tratado como aquilo que é: verdade. E é essa verdade —
-              tantas vezes silenciada — que a Tôdcachos se propõe a
+              tratado como aquilo que é: verdade. E é essa verdade,
+              tantas vezes silenciada, que a Tôdcachos se propõe a
               devolver ao espelho.
             </p>
 

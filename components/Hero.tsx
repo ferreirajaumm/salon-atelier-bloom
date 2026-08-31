@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { Calendar, ChevronDown, ArrowRight } from 'lucide-react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,15 +12,18 @@ if (typeof window !== 'undefined') {
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const wordmarkRef = useRef<HTMLHeadingElement>(null);
   const shouldReduceMotion = useReducedMotion();
 
   useGSAP(
     () => {
       if (shouldReduceMotion) return;
 
+      // Video slow zoom-out as you scroll away
       gsap.to(videoRef.current, {
-        yPercent: 15,
+        scale: 1.18,
+        yPercent: 8,
         ease: 'none',
         scrollTrigger: {
           trigger: containerRef.current,
@@ -30,137 +32,119 @@ export function Hero() {
           scrub: true,
         },
       });
+
+      // Giant wordmark drifts up faster than the video (depth)
+      gsap.to(wordmarkRef.current, {
+        yPercent: -40,
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: '60% top',
+          scrub: true,
+        },
+      });
     },
     { scope: containerRef }
   );
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
+  const line = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
-    },
+      transition: {
+        duration: 1,
+        delay: 0.3 + i * 0.12,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      },
+    }),
   };
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100dvh] w-full overflow-hidden bg-[#0d0d0d]"
+      className="relative h-[100dvh] w-full overflow-hidden bg-[#0a0806]"
     >
-      {/* Asymmetric Split Layout: Video LEFT (60%) + Text RIGHT (40%) */}
-      <div className="relative flex flex-col lg:flex-row min-h-[100dvh] w-full">
-        {/* LEFT: Video Column (60% on desktop, full width on mobile) */}
-        <div
-          ref={videoRef}
-          className="relative w-full lg:w-[60%] h-[55vh] lg:h-[100dvh] overflow-hidden will-change-transform"
-        >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/images/about-salon.jpg"
-            className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.55] contrast-[1.15]"
-          >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
-          </video>
-          {/* Gradient overlay for mobile readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-black/60" />
-        </div>
+      {/* Fullscreen video, covers everything */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/images/about-salon.jpg"
+        className="absolute inset-0 w-full h-full object-cover object-center will-change-transform"
+      >
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
 
-        {/* RIGHT: Text Column (40% on desktop, full width on mobile) */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="relative w-full lg:w-[40%] flex items-center justify-center px-6 sm:px-10 lg:px-14 py-12 lg:py-0 bg-[#0d0d0d] lg:bg-gradient-to-l lg:from-[#0d0d0d] lg:via-[#0d0d0d]/80 lg:to-transparent z-10"
-        >
-          <div className="w-full max-w-xl flex flex-col items-start text-left">
-            {/* Eyebrow / Mission Statement */}
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-[#b1823c]/40 text-[#cda93c] text-[10px] sm:text-xs uppercase tracking-[0.25em] mb-6 backdrop-blur-md"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#cda93c] animate-pulse" />
-              Especialista em Cachos, Crespos & Afros
-            </motion.div>
+      {/* Cinematic grade: warm the shadows, deepen the corners, keep the center readable */}
+      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_35%,transparent_0%,rgba(10,8,6,0.35)_55%,rgba(10,8,6,0.85)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0806] via-transparent to-[#0a0806]/40" />
+      <div className="absolute inset-0 bg-[#4a2f12] mix-blend-color opacity-[0.12]" />
 
-            {/* TÔDCACHOS Wordmark */}
-            <motion.h1
-              variants={itemVariants}
-              className="font-[var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8.5rem] font-bold text-[#fafaf8] leading-[0.9] mb-6 tracking-tight"
-            >
-              TÔDCACHOS
-            </motion.h1>
-
-            {/* Founder Line */}
-            <motion.p
-              variants={itemVariants}
-              className="font-[var(--font-body)] text-xs sm:text-sm uppercase tracking-[0.3em] text-[#b1823c] font-medium mb-6"
-            >
-              Por Hermelina Pinho
-            </motion.p>
-
-            {/* Italic Tagline */}
-            <motion.p
-              variants={itemVariants}
-              className="font-[var(--font-accent)] italic text-xl sm:text-2xl md:text-3xl text-zinc-200 font-normal mb-10 leading-snug"
-            >
-              não é só curvatura, é história, é movimento, é autenticidade
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row items-start gap-4"
-            >
-              <a
-                href="#contactos"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-[#b1823c] text-white font-[var(--font-body)] text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 hover:bg-[#cda93c]"
-              >
-                <Calendar className="w-4 h-4 mr-2" />
-                Fazer Marcação
-              </a>
-
-              <a
-                href="#servicos"
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/25 text-[#fafaf8] font-[var(--font-body)] text-xs uppercase tracking-[0.2em] font-light hover:border-[#cda93c] hover:text-[#cda93c] transition-colors duration-300"
-              >
-                Ver Serviços <ArrowRight className="w-3.5 h-3.5 ml-2" />
-              </a>
-            </motion.div>
-          </div>
-        </motion.div>
+      {/* Thin brand rule top */}
+      <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-10 lg:px-16 pt-7">
+        <span className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-white/70">
+          Hermelina Pinho
+        </span>
+        <span className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-white/70">
+          Lisboa
+        </span>
       </div>
 
-      {/* Scroll Down Indicator */}
-      <motion.a
-        href="#sobre"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center text-zinc-400 hover:text-[#cda93c] transition-colors"
-      >
-        <span className="font-[var(--font-body)] text-[10px] uppercase tracking-[0.2em] mb-2">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+      {/* Content: bottom-anchored, editorial */}
+      <div className="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-10 lg:px-16">
+        {/* Giant wordmark that bleeds edge-to-edge */}
+        <motion.h1
+          ref={wordmarkRef}
+          custom={0}
+          variants={line}
+          initial="hidden"
+          animate="visible"
+          className="font-[var(--font-display)] font-bold text-white leading-[0.82] tracking-[-0.03em] text-[clamp(3.2rem,17vw,15rem)] mb-6 sm:mb-8"
+          style={{ textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
         >
-          <ChevronDown className="w-4 h-4 text-[#cda93c]" />
-        </motion.div>
-      </motion.a>
+          TÔDCACHOS
+        </motion.h1>
+
+        {/* Tagline + CTA row, split baseline */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 border-t border-white/15 pt-8">
+          <motion.p
+            custom={1}
+            variants={line}
+            initial="hidden"
+            animate="visible"
+            className="font-[var(--font-accent)] italic text-white/90 text-2xl sm:text-3xl lg:text-4xl leading-[1.15] max-w-2xl"
+          >
+            não é só curvatura, é história, é movimento, é autenticidade.
+          </motion.p>
+
+          <motion.div
+            custom={2}
+            variants={line}
+            initial="hidden"
+            animate="visible"
+            className="flex items-center gap-6 shrink-0"
+          >
+            <a
+              href="#servicos"
+              className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] text-white/70 hover:text-white transition-colors border-b border-white/30 hover:border-white pb-1"
+            >
+              Ver Serviços
+            </a>
+            <a
+              href="#contactos"
+              className="group relative font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] text-[#0a0806] bg-[#e8c789] px-7 py-4 overflow-hidden transition-colors"
+            >
+              <span className="relative z-10">Marcar Horário</span>
+              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+            </a>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

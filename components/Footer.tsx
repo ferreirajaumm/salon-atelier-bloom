@@ -51,7 +51,7 @@ export function Footer() {
                 &ldquo;não é só curvatura, é história, é movimento, é autenticidade&rdquo;
               </p>
               <p className="font-sans text-sm text-zinc-300 font-light leading-relaxed mb-6">
-                <span className="text-[#fafaf8]">Hermelina Pinho</span> — 25+ anos transformando curvaturas, celebrando a identidade de cada madeixa cacheada, crespa e afra.
+                <span className="text-[#fafaf8]">Hermelina Pinho</span>. Mais de 25 anos transformando curvaturas, celebrando a identidade de cada madeixa cacheada, crespa e afra.
               </p>
             </div>
 
@@ -60,7 +60,7 @@ export function Footer() {
                 <Calendar className="w-4 h-4 mr-2" /> Agendar Consulta
               </h3>
               <p className="font-sans text-xs text-zinc-400 font-light mb-4">
-                Diagnóstico capilar personalizado — agendamento prévio para atendimento exclusivo.
+                Diagnóstico capilar personalizado. Agendamento prévio para atendimento exclusivo.
               </p>
               <a
                 href="https://wa.me/351000000000"
@@ -101,7 +101,7 @@ export function Footer() {
               </h3>
               <ul className="space-y-2 font-sans text-xs text-zinc-400 font-light">
                 <li className="flex items-center justify-between pb-2 border-b border-[#b1823c]/15">
-                  <span className="flex items-center"><Clock className="w-3.5 h-3.5 text-[#b1823c] mr-2" /> Terça — Sábado</span>
+                  <span className="flex items-center"><Clock className="w-3.5 h-3.5 text-[#b1823c] mr-2" /> Terça a Sábado</span>
                   <span className="text-zinc-200">09:00 – 19:00</span>
                 </li>
                 <li className="flex items-center justify-between text-zinc-500">
@@ -171,7 +171,7 @@ export function Footer() {
 
         {/* Bottom Copyright bar */}
         <div className="pt-8 border-t border-[#b1823c]/15 flex flex-col sm:flex-row items-center justify-between font-sans text-xs text-zinc-500 font-light">
-          <p>© {new Date().getFullYear()} TÔDCACHOS — Atelier de Hermelina Pinho. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} TÔDCACHOS · Atelier de Hermelina Pinho. Todos os direitos reservados.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <a href="#" className="hover:text-[#cda93c] transition-colors">Privacidade</a>
             <a href="#" className="hover:text-[#cda93c] transition-colors">Termos</a>
