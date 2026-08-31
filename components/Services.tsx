@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Clock, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from './ui/AnimatedSection';
 
 interface ServiceItem {
@@ -22,20 +22,20 @@ const servicesList: ServiceItem[] = [
   {
     id: 'corte-cachos',
     category: 'Cortes',
-    title: 'Corte Tridimensional Cacheados & Afros',
+    title: 'Corte Especializado para Cacheados, Crespos & Afros',
     subtitle: 'Assinatura Thay Silva',
-    description: 'Técnica de corte a seco desenhada exclusivamente para valorizar a curvatura natural dos cabelos cacheados, crespos e afros. O formato é esculpido respeitando o caimento, volume e densidade dos fios.',
+    description: 'Técnica desenvolvida especialmente para valorizar a curvatura natural dos cabelos cacheados, crespos e afros. O corte é realizado respeitando o formato dos cachos, o caimento, o volume e a individualidade de cada fio.',
     price: 'Sob Consulta',
     duration: '60 min',
     image: '/images/gallery-1.jpg',
-    features: ['Análise de visagismo & curvatura', 'Corte tridimensional a seco', 'Higienização e finalização inclusa'],
+    features: ['Análise de caimento e volume', 'Corte tridimensional a seco', 'Higienização e finalização inclusa'],
   },
   {
     id: 'madeixas-iluminados',
     category: 'Coloração',
     title: 'Madeixas & Iluminados de Autor',
     subtitle: 'Brilho & Dimensão',
-    description: 'Técnica de clareamento personalizada para criar pontos de luz estratégicos sem comprometer a saúde da fibra capilar. Confere dimensão, profundidade e movimento aos caracóis.',
+    description: 'Técnica de clareamento desenvolvida para criar pontos de luz e realçar a beleza natural dos cabelos cacheados, crespos e afros. As mechas proporcionam mais dimensão, brilho e movimento aos fios.',
     price: 'Desde 120€',
     duration: '180 min',
     image: '/images/gallery-2.jpg',
@@ -46,33 +46,33 @@ const servicesList: ServiceItem[] = [
     category: 'Coloração',
     title: 'Coloração Orgânica & Cobertura',
     subtitle: 'Cor Intensa & Proteção',
-    description: 'Procedimento de renovação de cor ou cobertura de fios brancos com fórmulas enriquecidas em óleos nutritivos, preservando a elasticidade dos cabelos cacheados.',
-    price: 'Desde 60€',
+    description: 'Procedimento realizado para transformar, realçar ou renovar a cor dos cabelos, respeitando a saúde e a estrutura dos fios cacheados, crespos e afros. Cobertura de fios brancos ou mudança de tom.',
+    price: 'Desde 60€ / 90€',
     duration: '90 min',
     image: '/images/gallery-4.jpg',
-    features: ['Fórmulas com óleos botânicos', 'Cobertura uniforme de brancos', 'Brilho acetinado e duradouro'],
-  },
-  {
-    id: 'photon-lizze',
-    category: 'Tratamentos',
-    title: 'Photon Lizze — Fototerapia Capilar',
-    subtitle: 'Tecnologia de Aceleração',
-    description: 'Tecnologia de luz que potencializa a absorção celular dos ativos nos fios, promovendo nutrição profunda, eliminação do frizz, alinhamento de cutículas e brilho espelhado.',
-    price: 'Sob Consulta',
-    duration: '75 min',
-    image: '/images/gallery-5.jpg',
-    features: ['Aceleração fotónica de nutrientes', 'Recuperação intensiva de danos', 'Redução drástica de frizz'],
+    features: ['Fórmulas enriquecidas com óleos', 'Cobertura uniforme de brancos', 'Brilho acetinado e duradouro'],
   },
   {
     id: 'soltura-cachos',
     category: 'Tratamentos',
     title: 'Soltura de Cachos & Alinhamento',
     subtitle: 'Fluidez & Leveza',
-    description: 'Procedimento exclusivo para aliviar a tração e proporcionar caracóis mais leves, soltos e definidos, reduzindo o excesso de volume para um caimento fluido.',
+    description: 'Técnica desenvolvida para proporcionar cachos mais leves, soltos e com movimento natural. Ajuda a reduzir o excesso de volume, facilitar a finalização e valorizar a beleza natural da curvatura.',
     price: 'Sob Consulta',
     duration: '120 min',
     image: '/images/gallery-3.jpg',
     features: ['Controlo de volume sem perder a forma', 'Finalização facilitada no dia a dia', 'Toque sedoso e movimento'],
+  },
+  {
+    id: 'photon-lizze',
+    category: 'Tratamentos',
+    title: 'Photon Lizze — Fototerapia Capilar',
+    subtitle: 'Tecnologia Avançada',
+    description: 'Tecnologia que potencializa a absorção dos ativos nos fios, promovendo hidratação profunda, redução do frizz, brilho, maciez e alinhamento capilar. Ideal para recuperar cabelos cacheados.',
+    price: 'Sob Consulta',
+    duration: '75 min',
+    image: '/images/gallery-5.jpg',
+    features: ['Fototerapia para penetração de ativos', 'Hidratação profunda e alinhamento', 'Redução do frizz e brilho espelhado'],
   },
   {
     id: 'higienizacao-capilar',
@@ -119,33 +119,30 @@ export function Services() {
     : servicesList.filter(s => s.category === selectedCategory);
 
   return (
-    <section id="servicos" className="py-28 md:py-40 bg-[#0a0a0a] text-[#fafaf8] relative border-t border-zinc-900 overflow-hidden">
+    <section id="servicos" className="py-28 md:py-40 bg-[#0d0d0d] text-[#fafaf8] relative border-t border-zinc-900 overflow-hidden">
       
       {/* Background Subtle Gradient Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c9a96e]/5 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
         
-        {/* Section Header - American Boutique Salon Style */}
+        {/* Section Header matching salaodobairro.pt */}
         <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 pb-8 border-b border-zinc-800/80">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#c9a96e]" />
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#c9a96e] font-semibold">
-                Menu de Especialidades
-              </span>
-            </div>
+            <span className="font-sans text-xs uppercase tracking-[0.25em] text-[#c9a96e] font-semibold block mb-2">
+              Menu Exclusivo
+            </span>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#fafaf8] tracking-tight">
               Serviços & Rituais
             </h2>
           </div>
 
           <p className="font-sans text-sm text-zinc-400 font-light max-w-md leading-relaxed">
-            Atendimento exclusivo focado no diagnóstico e na saúde dos cabelos cacheados, crespos e afros.
+            Atendimento especializado para valorizar a textura, volume e movimento natural dos cabelos cacheados, crespos e afros.
           </p>
         </AnimatedSection>
 
-        {/* Category Pills Bar */}
+        {/* Category Filter Buttons */}
         <div className="flex flex-wrap items-center gap-3 mb-12">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat;
@@ -153,7 +150,7 @@ export function Services() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`relative px-6 py-3 rounded-full text-xs uppercase font-sans tracking-widest transition-all duration-300 ${
+                className={`relative px-6 py-3 text-xs uppercase font-sans tracking-widest transition-all duration-300 ${
                   isActive
                     ? 'bg-[#c9a96e] text-black font-semibold shadow-[0_0_20px_rgba(201,169,110,0.3)]'
                     : 'bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white'
@@ -165,7 +162,7 @@ export function Services() {
           })}
         </div>
 
-        {/* Grid of American Salon Cards */}
+        {/* Cards Grid matching salaodobairro.pt */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filtered.map((service) => (
@@ -176,7 +173,7 @@ export function Services() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="group relative flex flex-col justify-between bg-zinc-900/60 border border-zinc-800/80 hover:border-[#c9a96e]/60 transition-all duration-500 overflow-hidden hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+                className="group relative flex flex-col justify-between bg-zinc-900/70 border border-zinc-800/80 hover:border-[#c9a96e]/60 transition-all duration-500 overflow-hidden hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
               >
                 {/* Image Header with Badge */}
                 <div className="relative h-56 w-full overflow-hidden bg-zinc-950">
@@ -185,11 +182,11 @@ export function Services() {
                     alt={service.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-center filter grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                    className="object-cover object-center filter grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-black/30" />
                   
-                  {/* Category Pill Badge */}
+                  {/* Category Badge */}
                   <span className="absolute top-4 left-4 px-3 py-1 bg-black/70 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-widest text-[#c9a96e]">
                     {service.subtitle}
                   </span>
@@ -227,7 +224,7 @@ export function Services() {
                   <div className="pt-6 border-t border-zinc-800/80 flex items-center justify-between mt-auto">
                     <div>
                       <span className="font-sans text-[10px] uppercase tracking-widest text-zinc-500 block">
-                        Valor do Serviço
+                        Valor
                       </span>
                       <span className="font-serif text-2xl text-[#c9a96e] font-normal">
                         {service.price}
@@ -236,9 +233,9 @@ export function Services() {
 
                     <a
                       href="#contactos"
-                      className="inline-flex items-center justify-center px-5 py-2.5 bg-[#c9a96e] text-black font-sans text-xs uppercase tracking-widest font-medium hover:bg-[#e5c98b] transition-all duration-300 shadow-md group-hover:translate-x-1"
+                      className="inline-flex items-center justify-center px-5 py-2.5 bg-[#c9a96e] text-black font-sans text-xs uppercase tracking-widest font-semibold hover:bg-[#e5c98b] transition-all duration-300 group-hover:translate-x-1"
                     >
-                      Agendar <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                      Fazer Marcação <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                     </a>
                   </div>
                 </div>
@@ -248,18 +245,18 @@ export function Services() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Professional Consultation Banner */}
+        {/* Booking Banner matching salaodobairro.pt */}
         <AnimatedSection delay={0.3} className="mt-16">
-          <div className="relative p-8 sm:p-12 bg-gradient-to-r from-zinc-900 via-[#141414] to-zinc-900 border border-[#c9a96e]/30 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden">
+          <div className="relative p-8 sm:p-12 bg-zinc-900/90 border border-[#c9a96e]/30 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden shadow-2xl">
             <div className="relative z-10 max-w-xl">
-              <div className="flex items-center gap-2 text-[#c9a96e] text-xs font-sans uppercase tracking-widest mb-2">
-                <Sparkles className="w-4 h-4" /> Diagnóstico Personalizado
-              </div>
+              <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#c9a96e] font-semibold block mb-2">
+                Marcações Online
+              </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-white font-light mb-2">
-                Não sabe qual é o tratamento ideal para o seu cabelo?
+                Agende a sua transformação com a Thay Silva
               </h3>
               <p className="font-sans text-sm text-zinc-400 font-light">
-                Agende uma consulta de avaliação presencial para analisarmos a porosidade, elasticidade e curvatura exata do seu fio.
+                Para garantir atendimento personalizado, recomendamos a marcação prévia por telefone ou WhatsApp.
               </p>
             </div>
 
@@ -267,7 +264,7 @@ export function Services() {
               href="#contactos"
               className="relative z-10 inline-flex items-center justify-center px-8 py-4 bg-[#c9a96e] text-black font-sans text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#e5c98b] transition-colors shrink-0 shadow-lg"
             >
-              <Calendar className="w-4 h-4 mr-2" /> Agendar Diagnóstico
+              <Calendar className="w-4 h-4 mr-2" /> Fazer Marcação
             </a>
           </div>
         </AnimatedSection>

@@ -2,13 +2,12 @@
 
 @layer base {
   :root {
-    --background: #0a0a0a;
+    --background: #0d0d0d;
     --foreground: #fafaf8;
     --gold: #c9a96e;
     --gold-light: #e5c98b;
     --gold-dark: #a38247;
-    --cream: #f5f0e8;
-    --dark-card: #141414;
+    --dark-surface: #141414;
     --dark-border: rgba(201, 169, 110, 0.2);
   }
 }
@@ -17,19 +16,18 @@
   --color-gold: #c9a96e;
   --color-gold-light: #e5c98b;
   --color-gold-dark: #a38247;
-  --color-cream: #f5f0e8;
-  --color-dark-bg: #0a0a0a;
+  --color-dark-bg: #0d0d0d;
   --color-dark-card: #141414;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #0a0a0a;
+  background-color: #0d0d0d;
   color: #fafaf8;
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #0d0d0d;
   color: #fafaf8;
   overflow-x: hidden;
   font-family: var(--font-body), sans-serif;
@@ -49,7 +47,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #0d0d0d;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -61,17 +59,17 @@ body {
   background: #c9a96e;
 }
 
-/* Glassmorphism utility */
+/* Salão do Bairro style glass panel */
 .glass-panel {
-  background: rgba(20, 20, 20, 0.7);
+  background: rgba(20, 20, 20, 0.75);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(201, 169, 110, 0.15);
+  border: 1px solid rgba(201, 169, 110, 0.2);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(201, 169, 110, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(201, 169, 110, 0.04) 100%);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(201, 169, 110, 0.12);
+  border: 1px solid rgba(201, 169, 110, 0.15);
 }
 
 /* Gold text gradient */
@@ -79,9 +77,4 @@ body {
   background: linear-gradient(135deg, #e5c98b 0%, #c9a96e 50%, #9e7d3b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* Gold border gradient */
-.border-gold-gradient {
-  border-image: linear-gradient(135deg, #c9a96e, rgba(201, 169, 110, 0.2)) 1;
 }
