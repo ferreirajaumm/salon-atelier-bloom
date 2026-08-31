@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Imbue, Arimo, Radley } from 'next/font/google';
 import './globals.css';
+import { JsonLd, SITE_URL } from '@/components/JsonLd';
 
 const imbue = Imbue({
   subsets: ['latin'],
@@ -24,15 +25,27 @@ const radley = Radley({
 });
 
 export const metadata: Metadata = {
-  title: 'TÔDCACHOS | Hermelina Pinho — Especialista em Cabelos Cacheados, Crespos & Afros',
-  description: 'TÔDCACHOS: Especialista em cabelos cacheados, crespos e afros. Cortes tridimensionais, madeixas iluminadas, soltura de cachos, fototerapia Photon Lizze e tratamentos de alta performance. Há mais de 25 anos renovando autoestimas.',
-  keywords: ['tôdcachos', 'hermelina pinho', 'cabelos cacheados', 'cacheados', 'crespos', 'afro', 'corte caracóis', 'soltura cachos', 'madeixas', 'lisboa', 'portugal'],
+  metadataBase: new URL(SITE_URL),
+  title: 'TÔDCACHOS | Especialista em Cabelos Cacheados, Crespos & Afros em Lisboa',
+  description: 'Atelier TÔDCACHOS em Lisboa: especialista em cabelos cacheados, crespos e afros. Corte, madeixas iluminadas, cachoterapia, powerterapia e finalização que respeitam a sua curvatura. Por Hermelina Pinho, 25+ anos de experiência.',
+  keywords: ['tôdcachos', 'hermelina pinho', 'cabeleireiro cacheados lisboa', 'salão cabelos crespos lisboa', 'corte cacheados', 'corte afro lisboa', 'madeixas cacheados', 'cachoterapia', 'tratamento capilar cacheados', 'especialista cachos portugal'],
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'TÔDCACHOS | Não é só curvatura, é história, é movimento, é autenticidade',
-    description: 'Hermelina Pinho — 25+ anos transformando e cuidando de curvaturas únicas. Técnica, atenção individual, humanidade.',
+    title: 'TÔDCACHOS | Especialista em Cabelos Cacheados, Crespos & Afros',
+    description: 'Não é só curvatura, é história, é movimento, é autenticidade. Hermelina Pinho, 25+ anos transformando curvaturas em Lisboa.',
     type: 'website',
     locale: 'pt_PT',
+    url: SITE_URL,
+    siteName: 'TÔDCACHOS',
+    images: [{ url: '/images/hero-poster.jpg', width: 1920, height: 1080, alt: 'Atelier TÔDCACHOS em Lisboa' }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TÔDCACHOS | Especialista em Cabelos Cacheados, Crespos & Afros',
+    description: 'Atelier especializado em cachos, crespos e afros em Lisboa. Por Hermelina Pinho.',
+    images: ['/images/hero-poster.jpg'],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -41,7 +54,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className={`${imbue.variable} ${arimo.variable} ${radley.variable}`}>
+    <html lang="pt-PT" className={`${imbue.variable} ${arimo.variable} ${radley.variable}`}>
+      <head>
+        <JsonLd />
+      </head>
       <body className="bg-[#f4efe9] text-[#2b2521] antialiased">
         {children}
       </body>
