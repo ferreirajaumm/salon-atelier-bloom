@@ -1,0 +1,580 @@
+e1c7386b341d5d6c7e8f38b10f91bb41e8d34382
+1767904
+CLIENT_FULL
+/_online
+Canva
+Castle
+Cloudflare
+Fastly
+Google Firebase Crashlytics
+Google Login
+Sentry
+Stripe
+Branch
+Drift
+Optimizely
+Ada
+Qualified
+BEN 605
+Chili Piper
+Fullstory
+Google Analytics
+Google Firebase Analytics
+Google Firebase Performance
+Google Optimize
+Hotjar
+Innovid
+LiveRamp
+Metadata
+Rokt
+Amazon
+Apple Search Ads
+AppLovin
+Appsflyer
+Baidu
+BigMarker
+Braze
+Facebook
+Facebook SDK
+Google Ads
+Google DoubleClick
+Google Firebase
+Google Tag Manager
+LinkedIn Insights
+Microsoft Advertising
+OpenAI
+Outbrain
+Pardot
+Pinterest Ads
+Snapchat
+TikTok
+Twitter
+Userled
+Yahoo Ad Exchange
+Youtube
+web
+28963d88-5554-4396-8f68-664b10141c4f
+design_viewer
+20260831-03-e1c7386
+STABLE
+prod
+AAQAA1dFQgAA
+UAAAAAAAAAA
+BAAAAAAAAAA
+pt-PT
+wss://www.canva.com/_stream
+WEB
+6a954bae43de11dc1b65de73dadb1fc0
+GTM-TZPTKRR
+16859691037
+320f7332-8571-45d7-b342-c54192dae547
+VIEWER
+DAHBkyDy4Lc
+TAFokerkO7Q
+en-GB
+TÔDCACHOS PORTFÓLIO 2026
+PBR7TB7Fgt4blzBX
+EAF37hW9a0M
+#000000
+LBn3fvt8XMnCGy19
+MAHJeGrtrBs
+MAHJeZR5Y5s
+1fr
+title
+LBJKPrYv6hwVsjcl
+Tôdcachos
+
+uppercase
+YAEblIoU62c,0
+73.336px
+#ffffff
+0.09em
+0.97em
+center
+none
+ltr
+0em
+body
+subtitle
+LB5ch6Kfs686DN4k
+Catálogo  de  serviços
+
+YAFcfgxAU44,0
+21.3333px
+0.8em
+1.4em
+LB70WwKYKfL8XGGf
+LBS2s8psYdH2xBfL
+MAFTTDgMqHQ
+heading
+LB52HNKscYf3cMWm
+Delicadeza 
+
+Naturalidade
+
+Praticidade
+
+Autenticidade
+
+24px
+0.02em
+1.22em
+do-not-change
+LBp5RH1ppF2V93JP
+YAGjgA104ww,0
+168px
+italic
+end
+normal
+LBxh9JbWKL9RZkb4
+@todcachos.pt
+
+20.0001px
+LBLvQLr0nsskXCnw
+HÁ MAIS DE 25 anos renovando autoestimas
+
+29.3333px
+1.6em
+PB0PrFfcfV3zjjgy
+EAGl98LB0IE
+LBStmyvv1Zc9jcvD
+M32 0A32 32 0 1 0 32 64A32 32 0 1 0 32 0Z
+MAHJd7OPTks
+paragraph
+LBxX6gkL5ZqgSm4q
+“Minha história na beleza começou na infância, em uma realidade simples, onde eu não tinha condições de frequentar salões ou investir em autocuidado. Mesmo assim, nasceu em mim o desejo de ajudar mulheres a se sentirem bonitas, cuidadas e confiantes.
+
+Comecei cuidando das pessoas ao meu redor e iniciei na cabeleireira aos 16 anos. Quando cheguei a Portugal, já tinha 20 anos de experiência, sendo 15 deles como especialista em loiros.
+
+Aqui, percebi a carência de um atendimento realmente especializado para cabelos afro, cacheados e loiros. Por isso, aprofundei meus conhecimentos e comecei a desenvolver tratamentos personalizados e hidratações específicas para cada tipo de cabelo.
+
+Hoje, dedico minha carreira a fortalecer a autoestima afro através de um atendimento humanizado, unindo técnica, cuidado e atenção individual para cada cliente.”
+
+20px
+1.2em
+LBbcC26zPLQQSHhr
+fundadora
+
+73.3336px
+#b1823c
+1.31em
+LBc9C4q6vsc24MDm
+HermelinaPinho
+
+YAF3ubaEvh0,0
+43.9993px
+PBL0yTWbTKYlRKMK
+EAFt1JIOikE
+MAHJhu_ARJg
+LBv2Q7YVk26x32hq
+MAHJeCj2-C4
+LB7G1Z6Dg7zDF0Z8
+  não é só curvatura, é história, é movimento, é autenticidade.
+
+17.3333px
+#cda93c
+LB5S0fjnJLdBd7HC
+TÔDCACHOS NASCEU paRA MOSTRAR AO MUNDO O PODER DE UMA CURVATURa, nasceu para dar voz para algo que durante muito tempo ficou escondido no meio da sociedade. aqui a prioridade é renovar, cuidar e transformar curvaturas únicas.
+
+justify
+PBZd5WCBZYGktYVg
+EAGqqtRUij4
+MAHJeGkfR2o
+LB6hrxC8JVWnnLGS
+M0 0H64V64H0z
+MAHJeKgrglk
+LBbQRrb7t3NPYbTv
+MAHFCgjMM9M
+LB4G8K73P7PxzMhk
+Protocolo intensivo de recuperação capilar desenvolvido para devolver força, brilho, maciez e resistência aos fios. Ideal para cabelos ressecados, danificados ou sem definição, proporcionando nutrição profunda e revitalização completa através do vapor JUNTAMENTE da luz LED.
+
+YAEtfq3j4CA,0
+LBN4DK0wCKzGmLcq
+Tratamento especializado para cabelos cacheados e crespos, focado em hidratação, nutrição e definição dos cachos. Ajuda no controle do frizz, recuperação da elasticidade e valorização da curvatura natural dos fios.
+
+LBvRkXXBslw29Bxj
+POWERTERAPIA
+
+20.0006px
+LB8fZ8dld7xyLkdp
+NOSSOS
+
+73.3334px
+0.56em
+LBtn45Mx5fWNkflt
+serviços & valores
+
+44.0011px
+LBSG8nxwP4hkPzvC
+CACHOTERAPIA
+
+LBT4HPTGJ1f3v042
+LBs2cKbDQ7qVtfsD
+40€
+
+13.3335px
+LBx7Khn5Sg922hnB
+LBj6tLXvSYHwHtft
+LBK4Z2SBTnLLRVWJ
+70€
+
+LBWX9zk2tQH2dHk7
+LBMV6pN3VFBFSm77
+TODOS OS VALORES PODEM SOFRER ALTERAÇÕES CONFORME A QUANTIDADE E TAMANHO DO CABELO
+
+13.3333px
+0.123em
+1.69em
+PBd1m8ySnqDW3BvN
+MAHIyTdEztE
+LBqK5sFvFXlvxlfg
+MAHJeLQFuQI
+LBwpTSnsjGSGTBPK
+MAHJeAODmwI
+LBp5rf1Pxy7HfXMz
+MAHJeJbupgM
+LBP8Db4jJKRrwNjr
+MAHJeCTJ7Rk
+LBnbD2qlrJgL5wbJ
+LBWkcw6bRXH2R0Ml
+Tratamento natural realizado 
+
+com infusões de ervas selecionadas para auxiliar no equilíbrio do couro cabeludo e na saúde dos fios.
+
+Promove sensação de frescor, fortalecimento, hidratação e cuidado revitalizante para os cabelos cacheados e crespos.
+
+16px
+start
+LBFBFWxg9PWy42sP
+CHATERAPIA
+
+LBzw2HnjJTVqhGzq
+LB6kDvr42cG0PMPV
+Tratamento que utiliza ozônio para auxiliar na oxigenação do couro cabeludo, promovendo limpeza profunda, equilíbrio da oleosidade e fortalecimento capilar.
+
+Ideal para estimular um ambiente saudável para o crescimento dos fios.
+
+LB6RH8JLH2cNPk7Q
+Ozonioterapia
+
+LBqYXJhkZmjrDSQ1
+LBDX6Y42QpTy6SdK
+Blends de oleos
+
+LBqGCMwDXdwpzYND
+Combinação exclusiva de óleos vegetais e essenciais voltada para nutrição, brilho e fortalecimento dos cabelos. 
+
+Auxilia na recuperação dos fios, reduz o ressecamento e proporciona mais maciez e vitalidade aos cachos.
+
+LBzQkkJ7F8bKS8mq
+LBqgjdNcsr4ybS0k
+Terapia realizada com aparelho de alta frequência para auxiliar na circulação do couro cabeludo, estimular os fios e promover higienização profunda. 
+
+Contribui para cabelos mais saudáveis, fortes e revitalizados.
+
+LBy3wLDdHZZdgchb
+Alta frequência
+
+LBXJ0qXz3zYdbZtr
+LB05VMK6yFdDjKr6
+60€
+
+LBDM4mC03fbQvBqK
+LBYxJHHbyLDTH35F
+LB4T2bFrNk52j6Wz
+LB1Hh82ZPDlCH8pH
+LBTTG9pVNdCpMVtk
+LBhxCVxwQJFhfzmM
+LBZc6Wd16js90pNL
+LBgx7qwljgcTJn30
+LBpBkRxK0DMnjxWt
+30€
+
+LBbDPkjbhLyYMmhk
+PBlRc1NFMP8T1LNl
+LB1LDvvX4D7b41pc
+MAHJiXQB59g
+LBzYPNCx5QJ7WVs5
+MAHJiReXguc
+LBNQzYY4BnbN39wf
+MAHJiQULcG8
+LBRdpBYFZXtbsR0K
+MAHJhtlmeQ0
+LBvLs9g0hfVx9tdx
+LBQZ0KpDfTK991hS
+Definição/finalização
+
+LBGZXXl6q6LdlBDK
+Técnica realizada após a lavagem para ativar e organizar a curvatura natural dos cabelos cacheados e crespos. Garante mais definição, controle de frizz e durabilidade da forma dos cachos, valorizando o volume, o movimento e a beleza natural dos fios.
+
+LBTqx17cTJx1m3Lm
+LBYV8yMGv2Cxv3v1
+Técnica de secagem controlada que utiliza difusor ou fonte de calor para acelerar a secagem dos cabelos cacheados e crespos sem desmanchar a definição dos cachos. .
+
+LBQLxn6Nm96Sh3b7
+Secagem
+
+LBXSr31dcLYzsZRN
+LB290ShwRhbFD0Nj
+10€
+
+LBhmwnyx33t206KK
+LBjfB8z53RdsTK3B
+LBslbXQrfnjSTbwD
+20€
+
+LBQw9L16GYfwjyzp
+LBHFBx1nHG6Zk9SQ
+LBMddVDj27P1gpHQ
+LBXzLmJgHK8Tx5WT
+LBkLhxl8Xv5Yd7RJ
+LB4Lv1fBxsKhXLls
+LB8rvdQQtKRR9DYG
+LBjKWL86mvMkyrVX
+LBPfsvhzgqpF2rBp
+Tecnologia que potencializa a absorção dos ativos nos fios, promovendo hidratação profunda, redução do frizz, brilho, maciez e alinhamento capilar. Ideal para recuperar cabelos cacheados e crespos, mantendo a definição e a beleza natural dos cachos.
+
+LBQyYGVybs16346X
+Photon lizze
+
+LBjG49XJ78Bx1wQp
+LBB5xVxVyMdDGmGC
+Procedimento responsável pela limpeza do couro cabeludo e dos fios, removendo resíduos, oleosidade e impurezas sem agredir a fibra capilar. Ajuda a manter os cabelos cacheados leves e preparados para receber os tratamentos capilares.
+
+LBvjWlPNy3F2zdbj
+Higienização
+
+PBGByPFq5NvccXyk
+LBW3WfM47YkGf1Vg
+MAHJeZejTu8
+LBHw1MSl2Jk7bXCx
+MAHJeLnC8Lc
+LBm5mPpsbVs4c9Rg
+MAHJePRDtEw
+LBfjSnrJlzkQBFgb
+MAHJeKB6yTk
+LB1kvgb8xP959VbL
+LBDqxmYcS39bsTsn
+Técnica desenvolvida especialmente para valorizar a curvatura natural dos cabelos cacheados, crespos e afros.
+
+O corte é realizado respeitando o formato dos cachos, o caimento, o volume e a individualidade 
+
+de cada fio.
+
+14.2659px
+LBQ7K0jjMdfGbVFq
+Corte
+
+LBZHkMrzxzWZ0PpV
+LBMqx65TjMxRlrR4
+Técnica de clareamento desenvolvida para criar pontos de luz 
+
+e realçar a beleza natural dos 
+
+cabelos cacheados, crespos e afros.
+
+As mechas proporcionam mais dimensão, brilho e movimento aos fios, valorizando a defini��ão e 
+
+o volume dos cachos.
+
+LBHJMdMBdqTNY2Nj
+Madeixas & iluminados
+
+LBmyX8qv5PWKW6LR
+LB6ZqSxk9xZg8Ls1
+Soltura de cachos
+
+LBKLkQWZPB0pbbzm
+Técnica desenvolvida para proporcionar cachos mais leves, soltos e com movimento natural. Ajuda a reduzir o excesso de volume, facilitar a finalização e valorizar a beleza natural da curvatura dos fios.
+
+LB9QJlSYMYvMHkMh
+LBXx9tdkF8HwtgGW
+Procedimento realizado para transformar, realçar ou renovar a cor dos cabelos, respeitando a saúde e a estrutura dos fios cacheados, 
+
+crespos e afros. 
+
+A coloração pode ser utilizada para cobertura de fios brancos, mudança de tonalidade, iluminação ou realce da cor natural.
+
+LB0rC4sLTDtvjWTf
+COLORAÇÃO
+
+LB1mkML1RJ4x8lBb
+LBmPHDz1H0QX7M6g
+LBZF2xF3BQVsm26g
+LBW4tMpNtNBQcgX8
+LBRgprlhq95csZyX
+Desde 120
+
+LBp8hvvVKrJQskck
+LBff5C3zYzyws4Z9
+LBQLnz4M03mPsHVF
+Desde 90€
+
+LBplQyxcW96dlsx9
+LBmNblNpQtr4yZs9
+LBFvT3XRwFBGrPvN
+Desde 60€
+
+LB0VLM7BFVNP20GF
+PBtnNmlklfX24xjT
+MAHJhkhlW78
+#000001
+LBFdhhRldCWSKSBY
+MAHJhvEmN5Y
+LBDPpQ004zfk5L0W
+MAHJhw6BJpA
+LBKsGyn49d9910t5
+PENTEADOS
+
+32.4224px
+1.05em
+LBK2JNxRwzcYj3Hk
+outros
+
+44px
+0.9em
+LBx88500HpK3Tqb6
+serviços
+
+84.2981px
+-0.039em
+LBfSGfDtxSqsWJmC
+DIAGNÓSTICO CAPILAR
+
+1.49em
+PBkKbF9Dh30DwX1g
+MAHJeX8ApKo
+LBy7VkS8R6SGC87T
+REALCE A SUA BELEZA NATURAL
+
+YADK4O60vp0,0
+46.6667px
+-0.04em
+0.99em
+PB5zyg5ZhBsd5rbw
+zCZuw_791ElMpJwKIXoaEA
+USER
+BAEExdWnxNc
+UAEExc3T8VE
+OWNER
+DEFAULT
+NONE
+MANUAL
+EXTENSION
+ThaySilva453
+Thay Silva
+SUCCEEDED
+document-export-us1.canva.com
+Dy4Lc/DAHBkyDy4Lc/121/thumbnail/0001.png
+Dy4Lc/DAHBkyDy4Lc/151/thumbnail/0002.png
+Dy4Lc/DAHBkyDy4Lc/141/thumbnail/0003.png
+Dy4Lc/DAHBkyDy4Lc/188/thumbnail/0004.png
+Dy4Lc/DAHBkyDy4Lc/184/thumbnail/0005.png
+Dy4Lc/DAHBkyDy4Lc/182/thumbnail/0006.png
+Dy4Lc/DAHBkyDy4Lc/185/thumbnail/0007.png
+Dy4Lc/DAHBkyDy4Lc/172/thumbnail/0008.png
+Dy4Lc/DAHBkyDy4Lc/135/thumbnail/0008.png
+Dy4Lc/DAHBkyDy4Lc/189/thumbnail/0010.png
+YAEblIoU62c
+TAN Pearl
+REGULAR
+OTF_CFF
+WOFF
+WOFF2
+0000
+007F
+0080
+00FF
+0100
+017F
+1E00
+1EFF
+YAFcfgxAU44
+Arial Unicode
+BOLD
+OTF
+024F
+0300
+036F
+20AB
+YAGjgA104ww
+Imbue
+LIGHT
+SEMI_BOLD
+HEAVY
+ULTRA_BOLD
+THIN
+EXTRA_LIGHT
+MEDIUM
+YAF3ubaEvh0
+Slight
+YAEtfq3j4CA
+The Youngest Serif
+YADK4O60vp0
+Radley
+ITALICS
+YACgEZ1cb1Q
+Arimo
+BOLD_ITALICS
+RASTER
+NOT_APPLICABLE
+IMPORTED
+AAIAC01BSEplR3J0ckJzUgAAAaBYKN3K1m67fTTPc_6DyZFW8gR-8tHBKGYXGUJFxpIOwjQKkyE
+PICO_THUMBNAIL
+image/png
+NANO_THUMBNAIL
+MICRO_THUMBNAIL
+THUMBNAIL
+SCREEN
+SCREEN_2X
+SCREEN_3X
+AAIAC01BSEplWlI1WTVzUgAAAaBYKN3KBYiHwfOgQ5wPGVjCS0y_Ex0tlGYykW4Njlg_zUQURvw
+VECTOR
+BADTzVq_igQ
+UADTzZxn-xk
+FREE
+AAIAC01BRlRURGdNcUhRUgAAAaBYKN3KJ4uAxGTaqJjqkTGAwfzXxvRHiUTfaWeBZG3_ES25TAo
+Barcode Label Sticker
+image/svg+xml
+AAIAC01BSEpkN09QVGtzUgAAAaBYKN3Ke1Sl8aDMUgVx5RvEdXpnJDXXJJBRx2nTnXHGDFHFChE
+image/jpeg
+AAIAC01BSEpodV9BUkpnUgAAAaBYKN3K94pckgWjOoB_ysy1ABRsDxloQlYV-wd0IEJLdfxG4f4
+AAIAC01BSEplQ2oyLUM0UgAAAaBYKN3KU_LsuXeY5kJK3Mg804iX5_5G6aWE8rrDbRpQtREUoqQ
+AAIAC01BSEplR2tmUjJvUgAAAaBYKN3KE_z1JIjKe31bbjDg2meMJttU2a3chz5YbFRBo0BJM0w
+AAIAC01BSEplS2dyZ2xrUgAAAaBYKN3KIqjYyGB0K9DE8Y4ulkn0cS9ght4HPZOQtTv14U9OyGo
+AAIAC01BSEZDZ2pNTTlNUgAAAaBYKN3KOw7Pym-Jn1QzyoQE25XdnTmJyZ0lkstF9ENGB0cFknw
+AAIAC01BSEl5VGRFenRFUgAAAaBYKN3KQ5lhZ2SeW8FJJ3-A5KQkvSwqMJ5NQ7-EiDGv6xdHmgw
+AAIAC01BSEplTFFGdVFJUgAAAaBYKN3KAa8lJy7cSnlEhjwnt55XlezGOeUbS-RHE-bewF1FpHM
+AAIAC01BSEplQU9EbXdJUgAAAaBYKN3KPnJcgasOgizBd6LcndnWTD2q38VnhA-bpHyJvPNIsHA
+AAIAC01BSEplSmJ1cGdNUgAAAaBYKN3KE3T0JDwEps1d5s-xsrU9nLEFVY7-SvBsW022iDzJDR0
+AAIAC01BSEplQ1RKN1JrUgAAAaBYKN3KT6ReCYIt7N6i_XrFlPHP6IfwbAED1DN0r6i054PtM-c
+AAIAC01BSEplWmVqVHU4UgAAAaBYKN3K3NmU-UyYVRrVD7226dyUHDpcUEWqG9FXVQxGApL9lmk
+AAIAC01BSEplTG5DOExjUgAAAaBYKN3K4WnsN9tDzsvwKCEN4QW1hmdGK63MTsygItipMTKaS7M
+AAIAC01BSEplUFJEdEV3UgAAAaBYKN3KhFqoZPRspYmo7W6qJQGdZ2RHIvBzW1qOxKO-liAqua4
+AAIAC01BSEplS0I2eVRrUgAAAaBYKN3KHBd-065lc7_tF2p1ZY0b7btRFXRMSbVRGJWNVIQg6gc
+AAIAC01BSEppWFFCNTlnUgAAAaBYKN3K1g9wHwgrvMc_dDAMYCgD-6IhHxA4T9v7fzIQAy4Fo9I
+AAIAC01BSEppUmVYZ3VjUgAAAaBYKN3KzN-juJoPlrlydP7UHa6M1MTs0LVx518Eag0U5NX3nbA
+AAIAC01BSEppUVVMY0c4UgAAAaBYKN3Kou3DiXiz6HIlTk5WRfoS7fhoLYzineZ5kdU5E_tjDR0
+AAIAC01BSEpodGxtZVEwUgAAAaBYKN3K1WCHgkv_WDgGC5K2kt2Prrhh9_3mGjRVxUOL9DzTK2s
+AAIAC01BSEpoa2hsVzc4UgAAAaBYKN3KzZ2tFvag5EpYubiVAdMyh3YwWa2Nwq_CFd3w1kBwPSE
+AAIAC01BSEpodkVtTjVZUgAAAaBYKN3KJdUEGm6llQnRYyiCV9xmgZ8SvKm02FmcE6BqhjpvCkQ
+AAIAC01BSEpodzZCSnBBUgAAAaBYKN3Kb3UoVgf7wpfOvPUUSD7GDjTEfDAG7MKpa0kepBkFCcc
+AAIAC01BSEplWDhBcEtvUgAAAaBYKN3KXzUsUDTFYdm8TWlY1H-4tgWKGigV018nkbazD1RP_Ws
+_fb_
+WINDOWED
+/pt_pt/politicas/privacy-policy/
+/pt_pt/politicas/terms-of-use/
+/policies/sms-terms/
+793679197895661
+779010036194-lf6spugv22vvj41pqjdj4d8k2tq7o5fd.apps.googleusercontent.com
+GOOGLE
+MICROSOFT
+CHROME
+MAC_OS
+DIRECT_SMS
+6LdwLRYUAAAAAMk_P7lj7011KE3cLI9aUSn36OXu
+6LeG_LcUAAAAADalWY1QvULFpvJOMIJytSE1BxZv
+6LcHW9UZAAAAALttQz5oDW1vKH51s-8_gDOs-r4n
+pk_pxSwi3mzvEdESPPN5zA5Qb9QhsJsY14e
+6LcUC1UrAAAAAAe0KkS8Q6dXNa54krxFy0MEo3-v
+0x4AAAAAAAch7p1URo6gIDFH

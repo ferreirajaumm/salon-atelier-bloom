@@ -30,20 +30,23 @@ export function Footer() {
           {/* Column 1: Brand & Reserva */}
           <AnimatedSection direction="up" className="lg:col-span-4 flex flex-col justify-between">
             <div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#fafaf8] tracking-wider mb-4">
-                Atelier Bloom
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#fafaf8] tracking-wider mb-2">
+                Thay Silva
               </h2>
+              <p className="font-sans text-xs uppercase tracking-widest text-[#c9a96e] mb-4">
+                Especialista em Cacheados, Crespos & Afros
+              </p>
               <p className="font-sans text-sm text-zinc-400 font-light leading-relaxed mb-6">
-                Salão de beleza e estética de luxo em Lisboa. Atendimento exclusivo sob reserva.
+                Atendimento personalizado focado na saúde e na beleza natural da curvatura do seu cabelo.
               </p>
             </div>
 
             <div className="p-6 bg-zinc-900/60 border border-zinc-800">
               <h3 className="font-serif text-base text-[#c9a96e] mb-2 flex items-center">
-                <Calendar className="w-4 h-4 mr-2" /> Agendamento
+                <Calendar className="w-4 h-4 mr-2" /> Agendar Consulta
               </h3>
               <p className="font-sans text-xs text-zinc-400 font-light mb-4">
-                Recomendamos a marcação prévia para garantir disponibilidade no horário desejado.
+                Agende previamente para garantir o diagnóstico capilar e atendimento exclusivo.
               </p>
               <a
                 href="https://wa.me/351000000000"
@@ -51,7 +54,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="inline-block w-full text-center py-3 bg-[#c9a96e] text-black font-sans text-xs uppercase tracking-widest hover:bg-[#e5c98b] transition-colors font-medium"
               >
-                Reservar por WhatsApp
+                Agendar via WhatsApp
               </a>
             </div>
           </AnimatedSection>
@@ -60,36 +63,32 @@ export function Footer() {
           <AnimatedSection direction="up" delay={0.1} className="lg:col-span-4 space-y-8">
             <div>
               <h3 className="font-sans text-xs uppercase tracking-widest text-[#c9a96e] mb-4 font-medium">
-                Contactos
+                Atendimento & Localização
               </h3>
               <ul className="space-y-3 font-sans text-sm text-zinc-300 font-light">
                 <li className="flex items-start">
                   <MapPin className="w-4 h-4 text-[#c9a96e] mr-3 shrink-0 mt-1" />
-                  <span>Avenida da Liberdade 120, 1º Dto<br />1250-144 Lisboa</span>
+                  <span>Atelier Thay Silva<br />Lisboa, Portugal</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-4 h-4 text-[#c9a96e] mr-3 shrink-0" />
-                  <a href="tel:+351210000000" className="hover:text-[#c9a96e] transition-colors">+351 210 000 000</a>
+                  <a href="tel:+351900000000" className="hover:text-[#c9a96e] transition-colors">+351 900 000 000</a>
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-4 h-4 text-[#c9a96e] mr-3 shrink-0" />
-                  <a href="mailto:contacto@atelierbloom.pt" className="hover:text-[#c9a96e] transition-colors">contacto@atelierbloom.pt</a>
+                  <a href="mailto:contacto@thaysilva.pt" className="hover:text-[#c9a96e] transition-colors">contacto@thaysilva.pt</a>
                 </li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-sans text-xs uppercase tracking-widest text-[#c9a96e] mb-3 font-medium">
-                Horário
+                Horário de Atendimento
               </h3>
               <ul className="space-y-2 font-sans text-xs text-zinc-400 font-light">
                 <li className="flex items-center justify-between pb-1 border-b border-zinc-900">
-                  <span className="flex items-center"><Clock className="w-3.5 h-3.5 text-[#c9a96e] mr-2" /> Terça — Sexta:</span>
-                  <span className="text-zinc-200">10:00 – 19:30</span>
-                </li>
-                <li className="flex items-center justify-between pb-1 border-b border-zinc-900">
-                  <span className="flex items-center"><Clock className="w-3.5 h-3.5 text-[#c9a96e] mr-2" /> Sábado:</span>
-                  <span className="text-zinc-200">09:00 – 18:00</span>
+                  <span className="flex items-center"><Clock className="w-3.5 h-3.5 text-[#c9a96e] mr-2" /> Terça — Sábado:</span>
+                  <span className="text-zinc-200">09:00 – 19:00</span>
                 </li>
                 <li className="flex items-center justify-between text-zinc-500">
                   <span className="flex items-center"><Clock className="w-3.5 h-3.5 text-zinc-600 mr-2" /> Domingo & Segunda:</span>
@@ -104,7 +103,7 @@ export function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram Atelier Bloom"
+                  aria-label="Instagram Thay Silva"
                   className="w-9 h-9 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors"
                 >
                   <InstagramIcon className="w-4 h-4" />
@@ -113,7 +112,7 @@ export function Footer() {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Facebook Atelier Bloom"
+                  aria-label="Facebook Thay Silva"
                   className="w-9 h-9 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors"
                 >
                   <FacebookIcon className="w-4 h-4" />
@@ -130,7 +129,7 @@ export function Footer() {
             
             <div className="relative aspect-square w-full border border-zinc-800 overflow-hidden bg-zinc-900">
               <iframe
-                title="Localização do Salão Atelier Bloom em Lisboa"
+                title="Localização do Atelier Thay Silva"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.149206764516!2d-9.147863723467466!3d38.72081515679237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91bda3039d91f24d%3A0xf67305dfc5e00!2sAv.%20da%20Liberdade%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt"
                 width="100%"
                 height="100%"
@@ -146,11 +145,10 @@ export function Footer() {
 
         {/* Bottom Copyright bar */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between font-sans text-xs text-zinc-500 font-light">
-          <p>© {new Date().getFullYear()} Atelier Bloom. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Thay Silva — Cabelos Cacheados, Crespos & Afros. Todos os direitos reservados.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <a href="#" className="hover:text-zinc-300 transition-colors">Privacidade</a>
             <a href="#" className="hover:text-zinc-300 transition-colors">Termos</a>
-            <a href="#" className="hover:text-zinc-300 transition-colors">Livro de Reclamações</a>
           </div>
         </div>
       </div>

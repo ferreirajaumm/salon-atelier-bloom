@@ -17,12 +17,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Atelier Bloom | Salão de Beleza & Estética de Luxo',
-  description: 'Espaço de beleza minimalista e elegante dedicado ao cuidado capilar, estética e bem-estar. Descubra uma experiência única de transformação.',
-  keywords: ['salão de beleza', 'cabelo', 'cabeleireiro', 'manicure', 'estética', 'tratamentos capilares', 'balayage', 'lisboa'],
+  title: 'Thay Silva | Especialista em Cabelos Cacheados, Crespos & Afros',
+  description: 'Atelier de especialista em cabelos cacheados, crespos e afros. Cortes a seco, madeixas iluminadas, soltura de cachos, tecnologia Photon Lizze e tratamentos de alta performance.',
+  keywords: ['Thay Silva', 'cabelos cacheados', 'crespos', 'afro', 'corte em caracóis', 'soltura de cachos', 'madeixas cacheadas', 'lisboa'],
   openGraph: {
-    title: 'Atelier Bloom | Salão de Beleza & Estética de Luxo',
-    description: 'Espaço de beleza minimalista e elegante dedicado ao cuidado capilar, estética e bem-estar.',
+    title: 'Thay Silva | Especialista em Cabelos Cacheados, Crespos & Afros',
+    description: 'Realce a sua beleza natural com cuidados especializados para curvaturas cacheadas, crespas e afros.',
     type: 'website',
     locale: 'pt_PT',
   },

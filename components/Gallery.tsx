@@ -15,12 +15,12 @@ interface GalleryItem {
 }
 
 const galleryImages: GalleryItem[] = [
-  { id: 1, src: '/images/gallery-1.jpg', title: 'Blowout Volumoso', category: 'Styling', aspect: 'aspect-[1/1]' },
-  { id: 2, src: '/images/gallery-2.jpg', title: 'Balayage Dourado', category: 'Coloração', aspect: 'aspect-[3/4]' },
-  { id: 3, src: '/images/gallery-3.jpg', title: 'Nail Art com Ouro', category: 'Manicure', aspect: 'aspect-[4/3]' },
-  { id: 4, src: '/images/gallery-4.jpg', title: 'Maquilhagem de Festa', category: 'Make-up', aspect: 'aspect-[3/4]' },
-  { id: 5, src: '/images/gallery-5.jpg', title: 'Apanhado Sofisticado', category: 'Noivas', aspect: 'aspect-[1/1]' },
-  { id: 6, src: '/images/gallery-6.jpg', title: 'Ritual Spa Capilar', category: 'Tratamento', aspect: 'aspect-[4/3]' },
+  { id: 1, src: '/images/gallery-1.jpg', title: 'Corte Tridimensional Cacheados', category: 'Corte', aspect: 'aspect-[3/4]' },
+  { id: 2, src: '/images/gallery-2.jpg', title: 'Madeixas Iluminadas em Cachos', category: 'Coloração', aspect: 'aspect-[3/4]' },
+  { id: 3, src: '/images/gallery-3.jpg', title: 'Definição & Ativação de Curvatura', category: 'Finalização', aspect: 'aspect-[4/3]' },
+  { id: 4, src: '/images/gallery-4.jpg', title: 'Soltura & Leveza de Cachos', category: 'Transformação', aspect: 'aspect-[3/4]' },
+  { id: 5, src: '/images/gallery-5.jpg', title: 'Tratamento com Photon Lizze', category: 'Tecnologia Capilar', aspect: 'aspect-[1/1]' },
+  { id: 6, src: '/images/gallery-6.jpg', title: 'Higienização & Brilho Espelhado', category: 'Cuidado Capilar', aspect: 'aspect-[4/3]' },
 ];
 
 export function Gallery() {
@@ -39,9 +39,9 @@ export function Gallery() {
     <section id="galeria" ref={containerRef} className="py-28 md:py-40 bg-[#0d0d0d] text-[#fafaf8] relative border-t border-zinc-900">
       <div className="max-w-6xl mx-auto px-6 sm:px-12">
         <SectionTitle
-          subtitle="Portfólio"
-          title="Galeria de Transformações"
-          description="Alguns dos nossos trabalhos recentes. Cada corte, cor e acabamento é desenhado exclusivamente para o cliente."
+          subtitle="Portfólio Original"
+          title="Galeria de Trabalhos — Thay Silva"
+          description="Resultados reais de cortes, tratamentos e iluminação desenvolvidos para valorizar a textura natural."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -88,7 +88,7 @@ export function Gallery() {
             rel="noopener noreferrer"
             className="inline-flex items-center text-xs font-sans uppercase tracking-widest text-zinc-400 hover:text-[#c9a96e] transition-colors"
           >
-            Siga-nos no Instagram para ver mais &rarr;
+            Acompanhe mais transformações no Instagram &rarr;
           </a>
         </AnimatedSection>
       </div>

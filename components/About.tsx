@@ -14,16 +14,16 @@ export function About() {
             <div className="relative aspect-[4/5] w-full overflow-hidden border border-zinc-800 group">
               <Image
                 src="/images/about-salon.jpg"
-                alt="Interior do Salão Atelier Bloom"
+                alt="Thay Silva - Especialista em Cabelos Cacheados, Crespos e Afros"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center filter grayscale-[15%] group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover object-center filter grayscale-[10%] group-hover:scale-105 transition-transform duration-700 ease-out"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-8 left-8 right-8 p-6 bg-black/60 backdrop-blur-md border border-zinc-800">
+              <div className="absolute bottom-8 left-8 right-8 p-6 bg-black/70 backdrop-blur-md border border-zinc-800">
                 <p className="font-serif text-base italic text-[#c9a96e] leading-relaxed">
-                  &quot;A verdadeira beleza é intemporal e nasce da harmonia entre técnica, cuidado e atenção ao detalhe.&quot;
+                  &quot;Cada curvatura conta uma história única. O meu propósito é cuidar e valorizar a forma e o volume natural dos seus fios.&quot;
                 </p>
               </div>
             </div>
@@ -32,33 +32,33 @@ export function About() {
           {/* Text Content Column */}
           <AnimatedSection direction="left" className="lg:col-span-6 flex flex-col justify-center">
             <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#c9a96e] mb-4 font-medium">
-              Conceito Atelier
+              A Nossa Filosofia
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mb-8">
-              Um Santuário Dedicado ao Seu Bem-Estar
+              A Arte dos Cabelos Cacheados, Crespos & Afros
             </h2>
 
             <p className="font-sans text-base text-zinc-400 font-light leading-relaxed mb-6">
-              O Atelier Bloom nasceu com o propósito de proporcionar uma experiência onde o tempo desacelera. Cada atendimento inicia-se com uma consulta individual, avaliando não apenas a saúde capilar, mas a harmonia estética de cada cliente.
+              Técnicas desenvolvidas especialmente para valorizar a curvatura natural dos cabelos cacheados, crespos e afros. Cada procedimento é realizado respeitando o formato dos cachos, o caimento, o volume e a individualidade de cada fio.
             </p>
 
             <p className="font-sans text-base text-zinc-400 font-light leading-relaxed mb-10">
-              Trabalhamos exclusivamente com fórmulas botânicas de alta performance e métodos sustentáveis, garantindo resultados vibrantes sem comprometer a integridade natural do seu cabelo.
+              Desde o diagnóstico capilar minucioso aos rituais de clareamento, iluminação e reconstrução com tecnologia Photon Lizze, unimos ciência e arte para proporcionar resultados leves, definidos e saudáveis.
             </p>
 
             {/* Highlights */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-zinc-800/80">
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#c9a96e] block font-light">12+</span>
-                <span className="font-sans text-xs text-zinc-500 font-light">Anos de Experiência</span>
-              </div>
-              <div>
                 <span className="font-serif text-3xl sm:text-4xl text-[#c9a96e] block font-light">100%</span>
-                <span className="font-sans text-xs text-zinc-500 font-light">Produtos Orgânicos</span>
+                <span className="font-sans text-xs text-zinc-500 font-light">Personalizado</span>
               </div>
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#c9a96e] block font-light">4.9</span>
-                <span className="font-sans text-xs text-zinc-500 font-light">Avaliação Geral</span>
+                <span className="font-serif text-3xl sm:text-4xl text-[#c9a96e] block font-light">Especialista</span>
+                <span className="font-sans text-xs text-zinc-500 font-light">Cacheados & Afros</span>
+              </div>
+              <div>
+                <span className="font-serif text-3xl sm:text-4xl text-[#c9a96e] block font-light">Photon</span>
+                <span className="font-sans text-xs text-zinc-500 font-light">Tecnologia Capilar</span>
               </div>
             </div>
           </AnimatedSection>
