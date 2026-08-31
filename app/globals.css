@@ -1,21 +1,23 @@
+/* TÔDCACHOS Brand Tokens — Hermelina Pinho's Vision */
+
 @import "tailwindcss";
 
 @layer base {
   :root {
     --background: #0d0d0d;
     --foreground: #fafaf8;
-    --gold: #c9a96e;
-    --gold-light: #e5c98b;
-    --gold-dark: #a38247;
+    --gold: #b1823c;
+    --gold-light: #cda93c;
+    --gold-dark: #8b6914;
     --dark-surface: #141414;
-    --dark-border: rgba(201, 169, 110, 0.2);
+    --dark-border: rgba(177, 130, 60, 0.2);
   }
 }
 
 @theme {
-  --color-gold: #c9a96e;
-  --color-gold-light: #e5c98b;
-  --color-gold-dark: #a38247;
+  --color-gold: #b1823c;
+  --color-gold-light: #cda93c;
+  --color-gold-dark: #8b6914;
   --color-dark-bg: #0d0d0d;
   --color-dark-card: #141414;
 }
@@ -34,7 +36,7 @@ body {
 }
 
 .font-serif {
-  font-family: var(--font-heading), Georgia, serif;
+  font-family: var(--font-display), Georgia, serif;
 }
 
 .font-sans {
@@ -56,25 +58,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c9a96e;
+  background: #b1823c;
 }
 
-/* Salão do Bairro style glass panel */
-.glass-panel {
-  background: rgba(20, 20, 20, 0.75);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(201, 169, 110, 0.2);
-}
-
-.glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(201, 169, 110, 0.04) 100%);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(201, 169, 110, 0.15);
+/* TÔDCACHOS accent border for hover states */
+.accent-border {
+  border: 1px solid #b1823c;
 }
 
 /* Gold text gradient */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #e5c98b 0%, #c9a96e 50%, #9e7d3b 100%);
+  background: linear-gradient(135deg, #cda93c 0%, #b1823c 50%, #8b6914 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -1,40 +1,55 @@
 'use client';
 
-import { Play, Eye } from 'lucide-react';
+import { Play } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { AnimatedSection } from './ui/AnimatedSection';
 import { SectionTitle } from './ui/SectionTitle';
 
 interface ReelItem {
   id: number;
-  videoSrc: string;
-  posterSrc: string;
+  imageSrc: string;
   title: string;
-  subtitle: string;
-  views: string;
+  description: string;
+  href: string;
 }
 
 const reelsList: ReelItem[] = [
   {
     id: 1,
-    videoSrc: '/videos/reel-1.mp4',
-    posterSrc: '/images/gallery-2.jpg',
+    imageSrc: '/images/gallery-2.jpg',
     title: 'Transformação Balayage Caramel',
-    subtitle: 'Antes & Depois',
-    views: '1.4k visualizações',
+    description: 'Antes e depois em 30 segundos.',
+    href: 'https://instagram.com/todcachos.pt',
   },
   {
     id: 2,
-    videoSrc: '/videos/reel-2.mp4',
-    posterSrc: '/images/gallery-5.jpg',
+    imageSrc: '/images/gallery-5.jpg',
     title: 'Bastidores: Penteado de Noiva',
-    subtitle: 'Processo Criativo',
-    views: '2.1k visualizações',
+    description: 'O processo artesanal por trás do visual.',
+    href: 'https://instagram.com/todcachos.pt',
+  },
+  {
+    id: 3,
+    imageSrc: '/images/canva-img-1.jpg',
+    title: 'Corte Curly em Movimento',
+    description: 'Técnica respeitando cada cacho.',
+    href: 'https://instagram.com/todcachos.pt',
+  },
+  {
+    id: 4,
+    imageSrc: '/images/canva-img-3.jpg',
+    title: 'Coloração Tonalizada',
+    description: 'Resultado natural com brilho profundo.',
+    href: 'https://instagram.com/todcachos.pt',
   },
 ];
 
 export function Reels() {
   return (
-    <section id="reels" className="py-28 md:py-40 bg-[#0a0a0a] text-[#fafaf8] relative border-t border-zinc-900">
+    <section
+      id="reels"
+      className="py-28 md:py-40 bg-[#0a0a0a] text-[#fafaf8] relative border-t border-zinc-900"
+    >
       <div className="max-w-6xl mx-auto px-6 sm:px-12">
         <SectionTitle
           subtitle="Bastidores & Processo"
@@ -45,51 +60,75 @@ export function Reels() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           {reelsList.map((reel, idx) => (
             <AnimatedSection key={reel.id} delay={idx * 0.15}>
-              <div className="group relative aspect-[9/16] sm:aspect-[4/5] w-full overflow-hidden border border-zinc-800/80 hover:border-[#c9a96e]/60 transition-all duration-500 bg-zinc-900">
-                {/* Loop Video */}
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  poster={reel.posterSrc}
-                  className="w-full h-full object-cover object-center filter brightness-90 group-hover:scale-105 transition-transform duration-700 ease-out"
-                >
-                  <source src={reel.videoSrc} type="video/mp4" />
-                </video>
+              <a
+                href={reel.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ver ${reel.title} no Instagram`}
+                className="group relative block aspect-[4/5] w-full overflow-hidden border border-zinc-800/80 hover:border-[#b1823c] transition-colors duration-500 bg-zinc-900"
+              >
+                {/* Static Image */}
+                <div className="absolute inset-0">
+                  <img
+                    src={reel.imageSrc}
+                    alt={reel.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center filter brightness-75 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                  />
+                </div>
 
-                {/* Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
-                {/* Top Badge */}
-                <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-10">
-                  <span className="inline-flex items-center px-3 py-1 bg-black/60 backdrop-blur-md text-[10px] font-sans uppercase tracking-widest text-[#c9a96e] border border-[#c9a96e]/30">
-                    <Play className="w-3 h-3 mr-1.5 fill-[#c9a96e]" /> Reel
-                  </span>
-                  <span className="font-sans text-xs text-zinc-400 flex items-center bg-black/40 px-3 py-1 backdrop-blur-md">
-                    <Eye className="w-3.5 h-3.5 mr-1.5 text-zinc-400" />
-                    {reel.views}
-                  </span>
+                {/* Play Button Badge - Centered */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <motion.div
+                    whileHover={{ scale: 1.12 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="relative flex items-center justify-center"
+                  >
+                    {/* Pulse Ring */}
+                    <motion.span
+                      aria-hidden
+                      className="absolute inset-0 rounded-full border-2 border-[#b1823c]"
+                      animate={{ scale: [1, 1.35], opacity: [0.7, 0] }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: 'easeOut',
+                      }}
+                      style={{ width: 60, height: 60 }}
+                    />
+                    {/* Solid Badge */}
+                    <div
+                      className="relative flex items-center justify-center rounded-full"
+                      style={{
+                        backgroundColor: '#b1823c',
+                        width: 60,
+                        height: 60,
+                      }}
+                    >
+                      <Play
+                        className="w-6 h-6 text-[#0a0a0a] fill-[#0a0a0a] ml-0.5"
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                  </motion.div>
                 </div>
 
                 {/* Bottom Details */}
                 <div className="absolute bottom-6 left-6 right-6 z-10">
-                  <span className="font-sans text-xs uppercase tracking-widest text-[#c9a96e] block mb-1">
-                    {reel.subtitle}
-                  </span>
-                  <h3 className="font-serif text-2xl text-[#fafaf8] font-light mb-4">
+                  <h3 className="font-serif text-2xl text-[#fafaf8] font-light mb-1">
                     {reel.title}
                   </h3>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-xs font-sans uppercase tracking-wider text-zinc-300 hover:text-[#c9a96e] transition-colors"
-                  >
+                  <p className="font-sans text-sm text-zinc-300 mb-4 line-clamp-1">
+                    {reel.description}
+                  </p>
+                  <span className="inline-flex items-center text-xs font-sans uppercase tracking-wider text-zinc-300 group-hover:text-[#b1823c] transition-colors">
                     Ver no Instagram &rarr;
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
             </AnimatedSection>
           ))}
         </div>

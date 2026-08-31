@@ -1,28 +1,35 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { Imbue, Arimo, Radley } from 'next/font/google';
 import './globals.css';
 
-const cormorant = Cormorant_Garamond({
+const imbue = Imbue({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-heading',
+  weight: ['400', '700'],
+  variable: '--font-display',
   display: 'swap',
 });
 
-const inter = Inter({
+const arimo = Arimo({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 });
 
+const radley = Radley({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-accent',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'Thay Silva | Especialista em Cabelos Cacheados, Crespos & Afros',
-  description: 'Atelier de especialista em cabelos cacheados, crespos e afros. Cortes a seco, madeixas iluminadas, soltura de cachos, tecnologia Photon Lizze e tratamentos de alta performance.',
-  keywords: ['Thay Silva', 'cabelos cacheados', 'crespos', 'afro', 'corte em caracóis', 'soltura de cachos', 'madeixas cacheadas', 'lisboa'],
+  title: 'TÔDCACHOS | Hermelina Pinho — Especialista em Cabelos Cacheados, Crespos & Afros',
+  description: 'TÔDCACHOS: Especialista em cabelos cacheados, crespos e afros. Cortes tridimensionais, madeixas iluminadas, soltura de cachos, fototerapia Photon Lizze e tratamentos de alta performance. Há mais de 25 anos renovando autoestimas.',
+  keywords: ['tôdcachos', 'hermelina pinho', 'cabelos cacheados', 'cacheados', 'crespos', 'afro', 'corte caracóis', 'soltura cachos', 'madeixas', 'lisboa', 'portugal'],
   openGraph: {
-    title: 'Thay Silva | Especialista em Cabelos Cacheados, Crespos & Afros',
-    description: 'Realce a sua beleza natural com cuidados especializados para curvaturas cacheadas, crespas e afros.',
+    title: 'TÔDCACHOS | Não é só curvatura, é história, é movimento, é autenticidade',
+    description: 'Hermelina Pinho — 25+ anos transformando e cuidando de curvaturas únicas. Técnica, atenção individual, humanidade.',
     type: 'website',
     locale: 'pt_PT',
   },
@@ -34,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="bg-[#0a0a0a] text-[#fafaf8] antialiased selection:bg-[#c9a96e] selection:text-black">
+    <html lang="pt" className={`${imbue.variable} ${arimo.variable} ${radley.variable}`}>
+      <body className="bg-[#0d0d0d] text-[#fafaf8] antialiased selection:bg-[#b1823c] selection:text-white">
         {children}
       </body>
     </html>
