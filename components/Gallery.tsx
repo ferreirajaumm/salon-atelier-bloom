@@ -21,60 +21,64 @@ interface GalleryItem {
   parallax: number;
 }
 
-const galleryImages: GalleryItem[] = [
+interface GalleryEntry {
+  id: number;
+  src: string;
+  title: string;
+  category: string;
+  /** desktop column offset for an elegant staggered rhythm */
+  offset: string;
+  parallax: number;
+}
+
+const galleryImages: GalleryEntry[] = [
   {
     id: 1,
     src: '/images/port-corte.jpg',
     title: 'Corte para Cacheados, Crespos & Afros',
     category: 'Corte',
-    aspect: 'aspect-[3/4]',
-    span: 'lg:row-span-2',
-    parallax: -45,
+    offset: 'lg:mt-0',
+    parallax: 24,
   },
   {
     id: 2,
     src: '/images/port-madeixas.jpg',
     title: 'Madeixas & Iluminados de Autor',
     category: 'Coloração',
-    aspect: 'aspect-[4/3]',
-    span: 'lg:col-span-2',
-    parallax: 30,
+    offset: 'lg:mt-16',
+    parallax: -20,
   },
   {
     id: 3,
     src: '/images/port-definicao.jpg',
     title: 'Definição & Finalização',
     category: 'Finalização',
-    aspect: 'aspect-[1/1]',
-    span: '',
-    parallax: 15,
+    offset: 'lg:mt-32',
+    parallax: 18,
   },
   {
     id: 4,
     src: '/images/port-finalizacao.jpg',
     title: 'Soltura & Movimento Natural',
     category: 'Finalização',
-    aspect: 'aspect-[3/4]',
-    span: 'lg:row-span-2',
-    parallax: 45,
+    offset: 'lg:-mt-8',
+    parallax: 24,
   },
   {
     id: 5,
     src: '/images/port-tratamento.jpg',
     title: 'Powerterapia & Tratamentos',
     category: 'Tratamento',
-    aspect: 'aspect-[3/4]',
-    span: '',
-    parallax: -15,
+    offset: 'lg:mt-8',
+    parallax: -20,
   },
   {
     id: 6,
     src: '/images/port-coloracao.jpg',
     title: 'Coloração & Cachoterapia',
     category: 'Cor & Cuidado',
-    aspect: 'aspect-[4/3]',
-    span: '',
-    parallax: 30,
+    offset: 'lg:mt-24',
+    parallax: 18,
   },
 ];
 
@@ -130,40 +134,51 @@ export function Gallery() {
           </p>
         </header>
 
-        {/* Asymmetric masonry grid: mobile = 1 col tall stack, lg = asymmetric 3-col */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 lg:auto-rows-auto">
+        {/* Editorial 3-column grid with a gentle staggered rhythm */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 items-start">
           {galleryImages.map((item) => (
             <figure
               key={item.id}
-              className={`group relative overflow-hidden border border-[var(--line)] hover:border-[var(--accent)] transition-colors duration-500 ${item.span}`}
-              data-gallery-image=""
-              data-parallax={item.parallax}
-              style={{ willChange: 'transform' }}
+              className={`group relative overflow-hidden ${item.offset}`}
             >
-              <div className={`relative w-full ${item.aspect} bg-[var(--canvas-3)] overflow-hidden`}>
+              <div
+                className="relative w-full aspect-[4/5] overflow-hidden bg-[var(--canvas-3)]"
+                data-gallery-image=""
+                data-parallax={item.parallax}
+                style={{ willChange: 'transform' }}
+              >
                 <Image
                   src={item.src}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center grayscale-[10%] group-hover:grayscale-0 group-hover:scale-[1.02] transition-[transform,filter] duration-[700ms] ease-out"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
                 />
 
-                {/* Soft light scrim: slides up on hover */}
+                {/* Permanent base gradient for caption legibility */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-[rgba(43,37,33,0.12)] via-[rgba(43,37,33,0.04)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/70 via-black/25 to-transparent"
                 />
 
-                {/* Caption: slides up from bottom on hover */}
-                <figcaption className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-                  <span className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[var(--accent-deep)] block mb-1.5">
+                {/* Always-visible caption in light text */}
+                <figcaption className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
+                  <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-white/80 block mb-2">
                     {item.category}
                   </span>
-                  <h3 className="font-serif text-lg sm:text-xl text-[var(--ink)] font-light leading-snug">
+                  <h3
+                    className="font-serif text-lg sm:text-xl text-white font-light leading-snug"
+                    style={{ fontFamily: 'var(--font-display)', textShadow: '0 1px 14px rgba(0,0,0,0.35)' }}
+                  >
                     {item.title}
                   </h3>
                 </figcaption>
+
+                {/* Hair-thin accent frame appearing on hover */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 border border-transparent group-hover:border-white/25 transition-colors duration-500"
+                />
               </div>
             </figure>
           ))}
