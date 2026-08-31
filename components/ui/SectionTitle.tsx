@@ -6,43 +6,36 @@ interface SectionTitleProps {
   subtitle?: string;
   title: string;
   description?: string;
-  align?: 'left' | 'center' | 'right';
+  align?: 'left' | 'center';
   className?: string;
-  goldAccent?: boolean;
 }
 
 export function SectionTitle({
   subtitle,
   title,
   description,
-  align = 'center',
+  align = 'left',
   className = '',
-  goldAccent = true,
 }: SectionTitleProps) {
   const alignClasses = {
     left: 'text-left items-start',
     center: 'text-center items-center',
-    right: 'text-right items-end',
   };
 
   return (
-    <AnimatedSection className={`flex flex-col mb-16 md:mb-20 ${alignClasses[align]} ${className}`}>
+    <AnimatedSection className={`flex flex-col mb-12 sm:mb-16 ${alignClasses[align]} ${className}`}>
       {subtitle && (
-        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#c9a96e] mb-3">
+        <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#c9a96e] mb-3 font-medium">
           {subtitle}
         </span>
       )}
       
-      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#fafaf8] tracking-tight leading-tight">
+      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#fafaf8] tracking-tight leading-[1.1]">
         {title}
       </h2>
 
-      {goldAccent && (
-        <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#c9a96e] to-transparent my-6" />
-      )}
-
       {description && (
-        <p className="font-sans text-base md:text-lg text-zinc-400 font-light max-w-[60ch] leading-relaxed">
+        <p className="font-sans text-base sm:text-lg text-zinc-400 font-light max-w-[65ch] leading-relaxed mt-4">
           {description}
         </p>
       )}
