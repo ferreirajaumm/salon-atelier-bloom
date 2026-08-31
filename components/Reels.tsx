@@ -62,25 +62,25 @@ export function Reels() {
                     loop
                     playsInline
                     poster={reel.poster}
-                    className="w-full h-full object-cover object-center brightness-105 group-hover:brightness-100 group-hover:scale-105 transition-all duration-900"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-900"
                     style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                   >
                     <source src={reel.videoSrc} type="video/mp4" />
                   </video>
                 </div>
 
-                {/* Gentle Warm Scrim Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#a9805a]/25 via-[#a9805a]/8 to-transparent" />
+                {/* Dark scrim at the base for legible captions */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
 
                 {/* Bottom Details */}
                 <div className="absolute bottom-6 left-6 right-6 z-10">
-                  <h3 className="font-serif text-2xl text-[var(--ink)] font-light mb-1">
+                  <h3 className="font-serif text-2xl text-white font-light mb-1" style={{ textShadow: '0 1px 12px rgba(0,0,0,0.4)' }}>
                     {reel.title}
                   </h3>
-                  <p className="font-sans text-sm text-[var(--ink-soft)] mb-4 line-clamp-1">
+                  <p className="font-sans text-sm text-white/85 mb-4 line-clamp-1" style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}>
                     {reel.description}
                   </p>
-                  <span className="inline-flex items-center text-xs font-sans uppercase tracking-wider text-[var(--ink-soft)] group-hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>
+                  <span className="inline-flex items-center text-xs font-sans uppercase tracking-wider text-white/90 group-hover:text-[#e8c789] transition-colors" style={{ transitionDuration: '0.9s' }}>
                     Ver no Instagram
                   </span>
                 </div>

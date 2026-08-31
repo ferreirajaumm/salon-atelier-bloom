@@ -101,9 +101,18 @@ export function Hero() {
         }}
       />
 
-      {/* Quiet luxury transition: dissolve video into light canvas */}
+      {/* Soft dark scrim behind the bottom content for text legibility */}
       <div
-        className="absolute inset-x-0 bottom-0 h-[35%]"
+        className="absolute inset-x-0 bottom-0 h-[55%] z-[1]"
+        style={{
+          background:
+            'linear-gradient(180deg, transparent 0%, rgba(43,37,33,0.35) 60%, rgba(43,37,33,0.55) 100%)',
+        }}
+      />
+
+      {/* Quiet luxury transition: dissolve video edges into light canvas at the very bottom */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-[18%] z-[1]"
         style={{
           background:
             'linear-gradient(180deg, transparent 0%, var(--canvas) 100%)',
