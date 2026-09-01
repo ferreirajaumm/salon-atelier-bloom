@@ -117,7 +117,7 @@ const faq = {
       name: 'Onde fica o atelier TÔDCACHOS?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O atelier fica em Lisboa, Portugal. O atendimento e por marcacao previa, de terca a sabado, das 09:00 as 19:00.',
+        text: 'A TODCACHOS tem tres moradas, com atendimento por marcacao previa de terca a sabado, das 09:00 as 19:00. Quinta do Conde: R. das Descobertas 3053, 2975-350. Setubal: Av. Bento Goncalves 26, 1o Piso 163K, 2910. Brandoa: R. Irene Lisboa 308A, 2650-419.',
       },
     },
     {

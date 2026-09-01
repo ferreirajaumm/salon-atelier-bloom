@@ -16,7 +16,7 @@ const faqs: QA[] = [
   },
   {
     q: 'Onde fica o atelier TÔDCACHOS?',
-    a: 'O atelier fica em Lisboa, Portugal. O atendimento é por marcação prévia, de terça a sábado, das 09:00 às 19:00.',
+    a: 'A TÔDCACHOS tem três moradas, com atendimento por marcação prévia de terça a sábado, das 09:00 às 19:00:\n\nQuinta do Conde\nR. das Descobertas 3053, 2975-350\n\nSetúbal\nAv. Bento Gonçalves 26, 1º Piso 163K, 2910\n\nBrandoa\nR. Irene Lisboa 308A, 2650-419',
   },
   {
     q: 'Quanto custa a Cachoterapia?',
@@ -82,7 +82,7 @@ export function Faq() {
                       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="font-sans text-base text-[var(--ink-soft)] font-light leading-relaxed pb-7 max-w-2xl">
+                      <p className="font-sans text-base text-[var(--ink-soft)] font-light leading-relaxed pb-7 max-w-2xl whitespace-pre-line">
                         {item.a}
                       </p>
                     </motion.div>

@@ -45,7 +45,7 @@ const servicesList: ServiceItem[] = [
     price: '70',
     priceSuffix: '€',
     duration: '90 min',
-    image: '/images/canva-img-1.jpg',
+    image: '/images/featured-powerterapia.jpg',
     featured: true,
   },
   {
@@ -82,15 +82,15 @@ const servicesList: ServiceItem[] = [
     image: '/images/port-finalizacao.jpg',
   },
   {
-    id: 'alta-frequencia',
-    category: 'Tratamentos',
-    title: 'Alta Frequência',
+    id: 'corte',
+    category: 'Finalização',
+    title: 'Corte',
     description:
-      'Eletroterapia que estimula a circulação e auxilia no tratamento de quedas e oleosidade excessiva.',
-    price: '60',
+      'Corte técnico desenhado para a sua curvatura. Realça o formato natural dos cachos, dá movimento e facilita o dia a dia.',
+    price: '35',
     priceSuffix: '€',
     duration: '45 min',
-    image: '/images/port-madeixas.jpg',
+    image: '/images/featured-corte.jpg',
     featured: true,
   },
   {

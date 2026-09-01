@@ -3,7 +3,6 @@ import { About } from '@/components/About';
 import { Owner } from '@/components/Owner';
 import { Values } from '@/components/Values';
 import { Services } from '@/components/Services';
-import { Gallery } from '@/components/Gallery';
 import { Reels } from '@/components/Reels';
 import { Reviews } from '@/components/Reviews';
 import { Faq } from '@/components/Faq';
@@ -27,10 +26,7 @@ export default function Home() {
       {/* 5. Serviços: editorial index + featured pan */}
       <Services />
 
-      {/* 6. Portfólio: editorial gallery with slow parallax */}
-      <Gallery />
-
-      {/* 7. Processo: reels linking to Instagram */}
+      {/* 6. Processo: reels linking to Instagram */}
       <Reels />
 
       {/* 8. Avaliações: reviews reais do Google */}
