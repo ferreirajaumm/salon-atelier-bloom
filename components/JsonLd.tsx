@@ -14,6 +14,36 @@ const hairSalon = {
   priceRange: '€€',
   currenciesAccepted: 'EUR',
   telephone: '+351925515466',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.5',
+    reviewCount: '42',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Liliana Correia' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'Profissionais 5 estrelas e muito simpáticas. Fiquei muito orgulhosa dos meus cachos pela primeira vez em muitos anos! A cor, o corte e a finalização ficaram perfeitos.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Pamela Santana' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'Atendimento excelente e resultado impecável. A profissional deu-me todo um direcionamento de como lidar com o meu cabelo e isso fez toda a diferença no dia a dia.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Rita P.' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'Mudança radical no meu cabelo. Finalmente tenho os meus cachos de volta e mais saudáveis que nunca. Já recomendei para todas as minhas amigas!',
+    },
+  ],
   areaServed: [
     { '@type': 'City', name: 'Quinta do Conde' },
     { '@type': 'City', name: 'Setúbal' },

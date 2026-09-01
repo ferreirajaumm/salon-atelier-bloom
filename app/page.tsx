@@ -5,6 +5,7 @@ import { Values } from '@/components/Values';
 import { Services } from '@/components/Services';
 import { Gallery } from '@/components/Gallery';
 import { Reels } from '@/components/Reels';
+import { Reviews } from '@/components/Reviews';
 import { Faq } from '@/components/Faq';
 import { Footer } from '@/components/Footer';
 
@@ -32,7 +33,10 @@ export default function Home() {
       {/* 7. Processo: reels linking to Instagram */}
       <Reels />
 
-      {/* 8. FAQ: AI Overviews + featured snippets */}
+      {/* 8. Avaliações: reviews reais do Google */}
+      <Reviews />
+
+      {/* 9. FAQ: AI Overviews + featured snippets */}
       <Faq />
 
       {/* 9. Contacto: calm footer */}
