@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { WHATSAPP_LINK } from '@/lib/whatsapp';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -185,7 +186,9 @@ export function Hero() {
               Ver Serviços
             </a>
             <a
-              href="#contactos"
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] px-7 py-4 transition-colors duration-300"
               style={{
                 color: 'var(--on-emerald)',

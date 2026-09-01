@@ -6,6 +6,7 @@ import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-mo
 import { useReducedMotion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { WHATSAPP_LINK } from '@/lib/whatsapp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -427,7 +428,9 @@ export function Services() {
             </p>
           </div>
           <a
-            href="#contactos"
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-[var(--accent)] text-[var(--on-emerald)] font-sans text-[11px] uppercase tracking-[0.2em] font-semibold hover:bg-[var(--accent-hover)] transition-colors shrink-0"
           >
             Marcar Horário

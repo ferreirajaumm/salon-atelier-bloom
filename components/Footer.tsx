@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock, Calendar } from 'lucide-react';
 import { AnimatedSection } from './ui/AnimatedSection';
+import { WHATSAPP_LINK } from '@/lib/whatsapp';
 
 function InstagramIcon({ className = 'w-4 h-4' }: { className?: string }) {
   return (
@@ -69,7 +70,7 @@ export function Footer() {
                 Diagnóstico capilar personalizado. Agendamento prévio para atendimento exclusivo.
               </p>
               <a
-                href="https://wa.me/351925515466"
+                href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full text-center py-4 min-h-[44px] flex items-center justify-center bg-[var(--accent)] text-[var(--on-emerald)] font-sans text-xs uppercase tracking-[0.25em] hover:bg-[var(--accent-hover)] transition-colors font-medium"
