@@ -107,7 +107,7 @@ export function Owner() {
             className="lg:col-span-5 order-1 lg:sticky lg:top-32"
           >
             <div
-              className="relative aspect-[3/4] w-full overflow-hidden"
+              className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl"
               style={{ border: '1px solid var(--line)' }}
             >
               <div ref={photoRef} className="absolute inset-0 w-full h-[110%] -top-[5%]">

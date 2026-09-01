@@ -312,7 +312,7 @@ function ServiceRow({
             scale: imageVisible ? 1 : 0.92,
           }}
           transition={{ duration: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="pointer-events-none hidden md:block absolute top-1/2 -translate-y-1/2 right-[28%] z-20 w-[260px] h-[320px] overflow-hidden border border-[var(--line)]"
+          className="pointer-events-none hidden md:block absolute top-1/2 -translate-y-1/2 right-[28%] z-20 w-[260px] h-[320px] overflow-hidden rounded-2xl border border-[var(--line)]"
           style={{
             x: useTransform(mouseX, (v) => v - 130),
             y: useTransform(mouseY, (v) => v - 160),

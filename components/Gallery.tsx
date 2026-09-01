@@ -215,7 +215,7 @@ export function Gallery() {
               className={`group relative overflow-hidden ${item.offset}`}
             >
               <div
-                className="relative w-full aspect-[4/5] overflow-hidden bg-[var(--canvas-3)]"
+                className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--canvas-3)]"
                 data-gallery-image=""
                 data-parallax={item.parallax}
                 style={{ willChange: 'transform' }}

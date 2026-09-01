@@ -52,7 +52,7 @@ export function Reels() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Ver ${reel.title} no Instagram`}
-                className="group relative block aspect-[4/5] w-full overflow-hidden border border-[var(--line)] hover:border-[var(--accent)] transition-colors duration-500 bg-[var(--canvas)]"
+                className="group relative block aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--line)] hover:border-[var(--accent)] transition-colors duration-500 bg-[var(--canvas)]"
               >
                 {/* Looping video */}
                 <div className="absolute inset-0">

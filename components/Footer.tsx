@@ -172,7 +172,7 @@ export function Footer() {
               Localização
             </h3>
 
-            <div className="relative aspect-square w-full border border-[var(--line)] overflow-hidden bg-[var(--canvas)]">
+            <div className="relative aspect-square w-full border border-[var(--line)] overflow-hidden rounded-2xl bg-[var(--canvas)]">
               <iframe
                 title="Localização do Atelier TÔDCACHOS, Quinta do Conde"
                 src="https://maps.google.com/maps?q=Rua%20das%20Descobertas%203053%2C%202975-350%20Quinta%20do%20Conde&t=&z=15&ie=UTF8&iwloc=&output=embed"
