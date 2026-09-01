@@ -66,7 +66,7 @@ export function Footer() {
                 href="https://wa.me/351000000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full text-center py-3 bg-[var(--accent)] text-[var(--canvas)] font-sans text-xs uppercase tracking-[0.25em] hover:bg-[var(--accent-deep)] transition-colors font-medium"
+                className="inline-block w-full text-center py-4 min-h-[44px] flex items-center justify-center bg-[var(--accent)] text-[var(--canvas)] font-sans text-xs uppercase tracking-[0.25em] hover:bg-[var(--accent-deep)] transition-colors font-medium"
                 style={{ transitionDuration: '0.9s', transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
               >
                 Agendar via WhatsApp
@@ -80,18 +80,18 @@ export function Footer() {
               <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-4 font-medium">
                 Atendimento, Localização
               </h3>
-              <ul className="space-y-3 font-sans text-sm text-[var(--ink-soft)] font-light">
-                <li className="flex items-start">
+              <ul className="space-y-1 font-sans text-sm text-[var(--ink-soft)] font-light">
+                <li className="flex items-start py-2">
                   <MapPin className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0 mt-1" />
                   <span>Atelier TÔDCACHOS<br />Lisboa, Portugal</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0" />
-                  <a href="tel:+351900000000" className="hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>+351 900 000 000</a>
+                  <a href="tel:+351900000000" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>+351 900 000 000</a>
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0" />
-                  <a href="mailto:contacto@todcachos.pt" className="hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>contacto@todcachos.pt</a>
+                  <a href="mailto:contacto@todcachos.pt" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>contacto@todcachos.pt</a>
                 </li>
               </ul>
             </div>
@@ -122,30 +122,30 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram TÔDCACHOS"
-                  className="w-9 h-9 border border-[var(--line)] flex items-center justify-center text-[var(--ink-soft)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  className="w-11 h-11 border border-[var(--line)] flex items-center justify-center text-[var(--ink-soft)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
                   style={{ transitionDuration: '0.9s' }}
                 >
-                  <InstagramIcon className="w-4 h-4" />
+                  <InstagramIcon className="w-5 h-5" />
                 </a>
                 <a
                   href="https://tiktok.com/@todcachos.pt"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="TikTok TÔDCACHOS"
-                  className="w-9 h-9 border border-[var(--line)] flex items-center justify-center text-[var(--ink-soft)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  className="w-11 h-11 border border-[var(--line)] flex items-center justify-center text-[var(--ink-soft)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
                   style={{ transitionDuration: '0.9s' }}
                 >
-                  <TikTokIcon className="w-4 h-4" />
+                  <TikTokIcon className="w-5 h-5" />
                 </a>
                 <a
                   href="https://facebook.com/todcachos.pt"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook TÔDCACHOS"
-                  className="w-9 h-9 border border-[var(--line)] flex items-center justify-center text-[var(--ink-soft)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  className="w-11 h-11 border border-[var(--line)] flex items-center justify-center text-[var(--ink-soft)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
                   style={{ transitionDuration: '0.9s' }}
                 >
-                  <FacebookIcon className="w-4 h-4" />
+                  <FacebookIcon className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -177,8 +177,8 @@ export function Footer() {
         <div className="pt-8 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between font-sans text-xs text-[var(--ink-faint)] font-light">
           <p>© {new Date().getFullYear()} TÔDCACHOS · Atelier de Hermelina Pinho. Todos os direitos reservados.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <a href="#" className="hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Privacidade</a>
-            <a href="#" className="hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Termos</a>
+            <a href="#" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Privacidade</a>
+            <a href="#" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Termos</a>
           </div>
         </div>
       </div>

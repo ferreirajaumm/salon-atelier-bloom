@@ -33,7 +33,7 @@ const servicesList: ServiceItem[] = [
     price: '40',
     priceSuffix: '€',
     duration: '60 min',
-    image: '/images/canva-img-1.jpg',
+    image: '/images/port-definicao.jpg',
   },
   {
     id: 'powerterapia',
@@ -44,7 +44,7 @@ const servicesList: ServiceItem[] = [
     price: '70',
     priceSuffix: '€',
     duration: '90 min',
-    image: '/images/canva-img-2.jpg',
+    image: '/images/canva-img-1.jpg',
     featured: true,
   },
   {
@@ -56,7 +56,7 @@ const servicesList: ServiceItem[] = [
     price: '45',
     priceSuffix: '€',
     duration: '60 min',
-    image: '/images/canva-img-3.jpg',
+    image: '/images/port-coloracao.jpg',
   },
   {
     id: 'ozonioterapia',
@@ -67,7 +67,7 @@ const servicesList: ServiceItem[] = [
     price: '55',
     priceSuffix: '€',
     duration: '50 min',
-    image: '/images/canva-img-4.jpg',
+    image: '/images/port-tratamento.jpg',
   },
   {
     id: 'blends-oleos',
@@ -78,7 +78,7 @@ const servicesList: ServiceItem[] = [
     price: '35',
     priceSuffix: '€',
     duration: '40 min',
-    image: '/images/canva-img-5.jpg',
+    image: '/images/port-finalizacao.jpg',
   },
   {
     id: 'alta-frequencia',
@@ -89,7 +89,7 @@ const servicesList: ServiceItem[] = [
     price: '60',
     priceSuffix: '€',
     duration: '45 min',
-    image: '/images/canva-img-6.jpg',
+    image: '/images/port-madeixas.jpg',
     featured: true,
   },
   {
@@ -101,7 +101,7 @@ const servicesList: ServiceItem[] = [
     price: '30',
     priceSuffix: '€',
     duration: '45 min',
-    image: '/images/canva-img-7.jpg',
+    image: '/images/port-definicao.jpg',
   },
   {
     id: 'secagem',
@@ -112,7 +112,7 @@ const servicesList: ServiceItem[] = [
     price: '10',
     priceSuffix: '€',
     duration: '30 min',
-    image: '/images/canva-img-8.jpg',
+    image: '/images/port-finalizacao.jpg',
   },
 ];
 
@@ -128,9 +128,17 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-    if (reduceMotion || !wrapRef.current || !trackRef.current) return;
+    const checkSize = () => setIsSmallScreen(window.innerWidth < 1024);
+    checkSize();
+    window.addEventListener('resize', checkSize);
+    return () => window.removeEventListener('resize', checkSize);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion || isSmallScreen || !wrapRef.current || !trackRef.current) return;
 
     const ctx = gsap.context(() => {
       const distance = () => trackRef.current!.scrollWidth - window.innerWidth;
@@ -151,7 +159,7 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
     }, wrapRef);
 
     return () => ctx.revert();
-  }, [reduceMotion]);
+  }, [reduceMotion, isSmallScreen]);
 
   return (
     <section
@@ -170,20 +178,20 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
 
       <div
         ref={trackRef}
-        className="flex h-[100dvh] items-center pl-[55vw] pr-[20vw] gap-12 will-change-transform"
+        className={isSmallScreen ? 'grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 sm:p-8 auto-rows-max' : 'flex h-[100dvh] items-center pl-[55vw] pr-[20vw] gap-12 will-change-transform'}
       >
         {services.map((service) => (
           <article
             key={service.id}
-            className="relative shrink-0 w-[480px] h-[600px] bg-[var(--canvas-2)] border border-[var(--line)] hover:border-[var(--accent)] transition-colors duration-500 overflow-hidden group"
+            className={`relative overflow-hidden group border border-[var(--line)] transition-colors duration-500 [@media(hover:hover)]:hover:border-[var(--accent)] ${isSmallScreen ? 'w-full h-[500px] bg-[var(--canvas-2)]' : 'shrink-0 w-[480px] h-[600px] bg-[var(--canvas-2)]'}`}
           >
             <div className="absolute inset-0">
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                sizes="480px"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes={isSmallScreen ? '100vw' : '480px'}
+                className={`object-cover transition-transform duration-700 ${isSmallScreen ? '' : '[@media(hover:hover)]:group-hover:scale-105'}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(251,245,239,0.85)] via-[rgba(251,245,239,0.3)] to-transparent" />
             </div>
@@ -192,16 +200,16 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
               <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent-deep)] mb-3">
                 {service.category}
               </span>
-              <h4 className="font-serif text-4xl font-light text-[var(--ink)] leading-tight mb-4">
+              <h4 className={`font-serif font-light text-[var(--ink)] leading-tight mb-4 ${isSmallScreen ? 'text-2xl sm:text-3xl' : 'text-4xl'}`}>
                 {service.title}
               </h4>
               <p className="font-sans text-sm text-[var(--ink-soft)] font-light leading-relaxed mb-6 max-w-md">
                 {service.description}
               </p>
               <div className="pt-6 border-t border-[var(--line)]">
-                <span className="font-serif text-5xl text-[var(--accent-deep)] font-light tabular-nums">
+                <span className={`font-serif text-[var(--accent-deep)] font-light tabular-nums ${isSmallScreen ? 'text-3xl' : 'text-5xl'}`}>
                   {service.price}
-                  <span className="text-2xl">{service.priceSuffix}</span>
+                  <span className={isSmallScreen ? 'text-lg' : 'text-2xl'}>{service.priceSuffix}</span>
                 </span>
                 <span className="block font-sans text-[11px] uppercase tracking-[0.25em] text-[var(--ink-faint)] mt-2">
                   {service.duration}
@@ -253,7 +261,7 @@ function ServiceRow({
       onMouseLeave={() => setImageVisible(false)}
       className="group relative border-t border-[var(--line)] last:border-b last:border-[var(--line)]"
     >
-      <div className="grid grid-cols-12 gap-4 sm:gap-8 items-baseline py-8 sm:py-10 px-2 sm:px-4 transition-colors duration-300 group-hover:bg-[var(--canvas-2)]">
+      <div className="grid grid-cols-12 gap-4 sm:gap-8 items-baseline py-8 sm:py-10 px-2 sm:px-4 transition-colors duration-300 [@media(hover:hover)]:group-hover:bg-[var(--canvas-2)]">
         {/* Number + Category */}
         <div className="col-span-12 sm:col-span-2 flex items-baseline gap-3">
           <span className="font-serif text-xs sm:text-sm text-[var(--ink-faint)] tabular-nums">
@@ -380,7 +388,7 @@ export function Services() {
       {/* Service Index */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 pb-28">
         <div className="mb-8">
-          <h3 className="font-serif text-2xl sm:text-3xl font-light text-[#fafaf8] tracking-tight">
+          <h3 className="font-serif text-2xl sm:text-3xl font-light text-[var(--ink)] tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
             Carta Completa
           </h3>
         </div>

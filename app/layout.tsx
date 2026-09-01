@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Imbue, Arimo, Radley } from 'next/font/google';
 import './globals.css';
 import { JsonLd, SITE_URL } from '@/components/JsonLd';
@@ -23,6 +23,12 @@ const radley = Radley({
   variable: '--font-accent',
   display: 'swap',
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#f4efe9',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

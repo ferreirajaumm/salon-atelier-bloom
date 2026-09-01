@@ -112,7 +112,7 @@ export function Owner() {
             >
               <div ref={photoRef} className="absolute inset-0 w-full h-[110%] -top-[5%]">
                 <Image
-                  src="/images/canva-img-3.jpg"
+                  src="/images/canva-img-1.jpg"
                   alt="Hermelina Pinho, fundadora da Tôdcachos"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"

@@ -57,7 +57,7 @@ export function Faq() {
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
                     aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between gap-6 py-7 text-left group"
+                    className="w-full flex items-center justify-between gap-6 py-7 text-left group cursor-pointer"
                   >
                     <span
                       className="font-serif text-lg sm:text-2xl font-light text-[var(--ink)] group-hover:text-[var(--accent-deep)] transition-colors"

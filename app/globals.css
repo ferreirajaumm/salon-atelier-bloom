@@ -40,6 +40,8 @@ html {
   scroll-behavior: smooth;
   background-color: var(--canvas);
   color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
