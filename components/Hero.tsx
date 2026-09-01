@@ -137,17 +137,18 @@ export function Hero() {
 
       {/* Content: bottom-anchored, editorial */}
       <div className="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-10 lg:px-16">
-        {/* Giant wordmark — delicate, airy */}
+        {/* Giant wordmark — delicate, airy. Fits full width without clipping. */}
         <motion.h1
           ref={wordmarkRef}
           custom={0}
           variants={line}
           initial="hidden"
           animate="visible"
-          className="font-[var(--font-display)] text-[clamp(2.75rem,15.5vw,14rem)] leading-[0.82] tracking-[-0.03em] font-normal mb-8 sm:mb-10 -ml-1 sm:-ml-2"
+          className="font-[var(--font-display)] leading-[0.82] tracking-[-0.03em] font-normal mb-8 sm:mb-10 whitespace-nowrap"
           style={{
             color: '#f4efe9',
             textShadow: '0 2px 60px rgba(43,37,33,0.25)',
+            fontSize: 'min(12.5vw, 13rem)',
           }}
         >
           TÔDCACHOS
