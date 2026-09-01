@@ -188,8 +188,8 @@ export function Hero() {
               href="#contactos"
               className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] px-7 py-4 transition-colors duration-300"
               style={{
-                color: '#1a1a1a',
-                backgroundColor: '#e6e0d3',
+                color: 'var(--on-emerald)',
+                backgroundColor: 'var(--emerald)',
               }}
             >
               Marcar Horário

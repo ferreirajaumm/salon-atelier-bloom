@@ -30,7 +30,7 @@ export function About() {
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-15%' }}
           transition={{ duration: 0.9, ease }}
-          className="block text-[10px] uppercase tracking-[0.35em] text-[var(--accent)] mb-16 md:mb-24 text-center font-light"
+          className="block text-[10px] uppercase tracking-[0.35em] text-[var(--accent-deep)] mb-16 md:mb-24 text-center font-light"
         >
           O Manifesto
         </motion.span>

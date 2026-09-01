@@ -428,7 +428,7 @@ export function Services() {
           </div>
           <a
             href="#contactos"
-            className="inline-flex items-center justify-center px-8 py-4 bg-[var(--accent)] text-[var(--canvas)] font-sans text-[11px] uppercase tracking-[0.2em] font-semibold hover:bg-[var(--accent-deep)] transition-colors shrink-0"
+            className="inline-flex items-center justify-center px-8 py-4 bg-[var(--accent)] text-[var(--on-emerald)] font-sans text-[11px] uppercase tracking-[0.2em] font-semibold hover:bg-[var(--accent-hover)] transition-colors shrink-0"
           >
             Marcar Horário
           </a>

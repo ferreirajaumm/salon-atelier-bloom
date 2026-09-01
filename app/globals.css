@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Natural organic palette: Emerald Noir, Antique Gold, Stone Oyster, Onyx Ink */
+    /* Client's official palette: Emerald Noir · Antique Gold · Stone Oyster · Onyx Ink */
     --canvas: #ede8de;        /* Stone Oyster — off-white base bg */
     --canvas-2: #e6e0d3;      /* soft oyster, alternating sections */
     --canvas-3: #ddd5c5;      /* deeper oyster for slight contrast */
@@ -12,15 +12,24 @@
     --ink-soft: #4a4a45;      /* secondary text, softened onyx */
     --ink-faint: #8a877e;     /* captions, faint labels */
     --line: #cfc7b7;          /* hairlines, warm neutral */
-    --accent: #b08d3e;        /* Antique Gold — details, borders, icons */
-    --accent-deep: #16332c;   /* Emerald Noir — headings, highlights, AA contrast */
+
+    /* The four brand pillars */
+    --emerald: #16332c;       /* Emerald Noir — buttons, CTAs, strong accents */
+    --gold: #b08d3e;          /* Antique Gold — section titles, labels, details */
+    --oyster: #cfc7b7;        /* Stone Oyster — warm neutral surface */
+    --onyx: #1a1a1a;          /* Onyx Ink — primary text */
+
+    /* Semantic roles mapped to the palette */
+    --accent: #16332c;        /* Emerald Noir → buttons & CTAs (green) */
+    --accent-hover: #0f241f;  /* deeper emerald on hover */
+    --accent-deep: #8a6d2f;   /* Antique Gold (deepened for AA) → section titles */
+
+    /* On-emerald text (for green buttons) */
+    --on-emerald: #f1ede4;    /* off-white text on emerald buttons */
 
     /* legacy aliases kept so any leftover class still resolves */
     --background: #ede8de;
     --foreground: #1a1a1a;
-    --gold: #b08d3e;
-    --gold-light: #c9a95f;
-    --gold-dark: #16332c;
   }
 }
 
@@ -32,8 +41,14 @@
   --color-ink-soft: #4a4a45;
   --color-ink-faint: #8a877e;
   --color-line: #cfc7b7;
-  --color-accent: #b08d3e;
-  --color-accent-deep: #16332c;
+  --color-accent: #16332c;        /* Emerald Noir → buttons */
+  --color-accent-hover: #0f241f;
+  --color-accent-deep: #8a6d2f;   /* Antique Gold → titles */
+  --color-emerald: #16332c;
+  --color-gold: #b08d3e;
+  --color-oyster: #cfc7b7;
+  --color-onyx: #1a1a1a;
+  --color-on-emerald: #f1ede4;
 }
 
 html {

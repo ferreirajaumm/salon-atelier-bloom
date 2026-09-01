@@ -47,7 +47,7 @@ export function Footer() {
                 className="w-full max-w-[300px] h-auto mb-4"
                 priority
               />
-              <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-5 font-medium">
+              <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent-deep)] mb-5 font-medium">
                 Atelier de Cachos, Quinta do Conde
               </p>
               <p
@@ -62,7 +62,7 @@ export function Footer() {
             </div>
 
             <div className="p-6 bg-[var(--canvas-2)] border border-[var(--line)]">
-              <h3 className="font-serif text-base text-[var(--accent)] mb-2 font-light">
+              <h3 className="font-serif text-base text-[var(--accent-deep)] mb-2 font-light">
                 Marcar Horário
               </h3>
               <p className="font-sans text-xs text-[var(--ink-soft)] font-light mb-4">
@@ -72,7 +72,7 @@ export function Footer() {
                 href="https://wa.me/351925515466"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full text-center py-4 min-h-[44px] flex items-center justify-center bg-[var(--accent)] text-[var(--canvas)] font-sans text-xs uppercase tracking-[0.25em] hover:bg-[var(--accent-deep)] transition-colors font-medium"
+                className="inline-block w-full text-center py-4 min-h-[44px] flex items-center justify-center bg-[var(--accent)] text-[var(--on-emerald)] font-sans text-xs uppercase tracking-[0.25em] hover:bg-[var(--accent-hover)] transition-colors font-medium"
                 style={{ transitionDuration: '0.9s', transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
               >
                 Agendar via WhatsApp
@@ -83,7 +83,7 @@ export function Footer() {
           {/* Column 2: Contactos & Horário */}
           <AnimatedSection direction="up" delay={0.1} className="space-y-8">
             <div>
-              <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-4 font-medium">
+              <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent-deep)] mb-4 font-medium">
                 Atendimento, Localização
               </h3>
               <ul className="space-y-3 font-sans text-sm text-[var(--ink-soft)] font-light">
@@ -111,7 +111,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-3 font-medium">
+              <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent-deep)] mb-3 font-medium">
                 Horário de Atendimento
               </h3>
               <ul className="space-y-2 font-sans text-xs text-[var(--ink-soft)] font-light">
@@ -127,7 +127,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-3 font-medium">
+              <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent-deep)] mb-3 font-medium">
                 Siga @todcachos.pt
               </h3>
               <div className="flex space-x-3">
@@ -167,7 +167,7 @@ export function Footer() {
 
           {/* Column 3: Map */}
           <AnimatedSection direction="up" delay={0.2} className="flex flex-col md:col-span-2 lg:col-span-1">
-            <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-4 font-medium">
+            <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent-deep)] mb-4 font-medium">
               Localização
             </h3>
 

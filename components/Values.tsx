@@ -88,7 +88,7 @@ export function Values() {
             >
               <span
                 className="col-span-1 font-sans text-[11px] uppercase tracking-[0.25em] tabular-nums"
-                style={{ color: 'var(--ink-faint)' }}
+                style={{ color: 'var(--accent-deep)' }}
               >
                 {String(i + 1).padStart(2, '0')}
               </span>
