@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-type ServiceCategory = 'Tratamentos' | 'Finalização' | 'Rituais' | 'Terapia';
+type ServiceCategory = 'Tratamentos' | 'Finalização' | 'Rituais';
 
 interface ServiceItem {
   id: string;
@@ -33,11 +33,11 @@ const servicesList: ServiceItem[] = [
     price: '40',
     priceSuffix: '€',
     duration: '60 min',
-    image: '/images/port-definicao.jpg',
+    image: '/images/cliente-cachos-castanhos.jpg',
   },
   {
     id: 'powerterapia',
-    category: 'Terapia',
+    category: 'Tratamentos',
     title: 'Powerterapia',
     description:
       'Tratamento intensivo de recuperação para fios desvitalizados. Reposição de massa, força e brilho em sessão única.',
@@ -60,7 +60,7 @@ const servicesList: ServiceItem[] = [
   },
   {
     id: 'ozonioterapia',
-    category: 'Terapia',
+    category: 'Tratamentos',
     title: 'Ozonioterapia',
     description:
       'Aplicação de ozono medicinal para oxigenação do couro cabeludo. Estimula crescimento, fortalece a raiz e revitaliza.',
@@ -82,7 +82,7 @@ const servicesList: ServiceItem[] = [
   },
   {
     id: 'alta-frequencia',
-    category: 'Terapia',
+    category: 'Tratamentos',
     title: 'Alta Frequência',
     description:
       'Eletroterapia que estimula a circulação e auxilia no tratamento de quedas e oleosidade excessiva.',
@@ -101,7 +101,7 @@ const servicesList: ServiceItem[] = [
     price: '30',
     priceSuffix: '€',
     duration: '45 min',
-    image: '/images/port-definicao.jpg',
+    image: '/images/cliente-cachos-loiros.jpg',
   },
   {
     id: 'secagem',
@@ -121,7 +121,6 @@ const categories: Array<'Todos' | ServiceCategory> = [
   'Tratamentos',
   'Finalização',
   'Rituais',
-  'Terapia',
 ];
 
 function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
@@ -203,6 +202,9 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
                 {service.description}
               </p>
               <div className="pt-6 border-t border-[var(--line)]">
+                <span className="block font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--ink-faint)] mb-1">
+                  Desde
+                </span>
                 <span className="font-serif text-4xl sm:text-5xl text-[var(--accent-deep)] font-light tabular-nums">
                   {service.price}
                   <span className="text-xl sm:text-2xl">{service.priceSuffix}</span>
@@ -284,6 +286,9 @@ function ServiceRow({
             {service.duration}
           </span>
           <div className="flex items-baseline gap-1 sm:justify-end">
+            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-[var(--ink-faint)] self-center mr-1">
+              Desde
+            </span>
             <span className="font-serif text-3xl sm:text-4xl text-[var(--accent-deep)] font-light tabular-nums leading-none">
               {service.price}
             </span>
