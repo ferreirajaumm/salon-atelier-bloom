@@ -144,7 +144,7 @@ export function Hero() {
           variants={line}
           initial="hidden"
           animate="visible"
-          className="font-[var(--font-display)] text-[clamp(3rem,17vw,15rem)] leading-[0.82] tracking-[-0.02em] font-normal mb-8 sm:mb-10"
+          className="font-[var(--font-display)] text-[clamp(2.75rem,15.5vw,14rem)] leading-[0.82] tracking-[-0.03em] font-normal mb-8 sm:mb-10 -ml-1 sm:-ml-2"
           style={{
             color: '#f4efe9',
             textShadow: '0 2px 60px rgba(43,37,33,0.25)',
