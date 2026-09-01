@@ -128,17 +128,9 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-    const checkSize = () => setIsSmallScreen(window.innerWidth < 1024);
-    checkSize();
-    window.addEventListener('resize', checkSize);
-    return () => window.removeEventListener('resize', checkSize);
-  }, []);
-
-  useEffect(() => {
-    if (reduceMotion || isSmallScreen || !wrapRef.current || !trackRef.current) return;
+    if (reduceMotion || !wrapRef.current || !trackRef.current) return;
 
     const ctx = gsap.context(() => {
       const distance = () => trackRef.current!.scrollWidth - window.innerWidth;
@@ -159,7 +151,7 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
     }, wrapRef);
 
     return () => ctx.revert();
-  }, [reduceMotion, isSmallScreen]);
+  }, [reduceMotion]);
 
   return (
     <section
@@ -178,38 +170,38 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
 
       <div
         ref={trackRef}
-        className={isSmallScreen ? 'grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 sm:p-8 auto-rows-max' : 'flex h-[100dvh] items-center pl-[55vw] pr-[20vw] gap-12 will-change-transform'}
+        className="flex h-[100dvh] items-center pl-[70vw] pr-[15vw] sm:pl-[55vw] sm:pr-[20vw] gap-8 sm:gap-12 will-change-transform"
       >
         {services.map((service) => (
           <article
             key={service.id}
-            className={`relative overflow-hidden group border border-[var(--line)] transition-colors duration-500 [@media(hover:hover)]:hover:border-[var(--accent)] ${isSmallScreen ? 'w-full h-[500px] bg-[var(--canvas-2)]' : 'shrink-0 w-[480px] h-[600px] bg-[var(--canvas-2)]'}`}
+            className="relative shrink-0 w-[78vw] sm:w-[480px] h-[70vh] sm:h-[600px] max-h-[600px] bg-[var(--canvas-2)] border border-[var(--line)] transition-colors duration-500 [@media(hover:hover)]:hover:border-[var(--accent)] overflow-hidden group"
           >
             <div className="absolute inset-0">
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                sizes={isSmallScreen ? '100vw' : '480px'}
-                className={`object-cover transition-transform duration-700 ${isSmallScreen ? '' : '[@media(hover:hover)]:group-hover:scale-105'}`}
+                sizes="(max-width: 640px) 78vw, 480px"
+                className="object-cover transition-transform duration-700 [@media(hover:hover)]:group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(251,245,239,0.85)] via-[rgba(251,245,239,0.3)] to-transparent" />
             </div>
 
-            <div className="relative h-full p-10 flex flex-col justify-end">
+            <div className="relative h-full p-7 sm:p-10 flex flex-col justify-end">
               <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent-deep)] mb-3">
                 {service.category}
               </span>
-              <h4 className={`font-serif font-light text-[var(--ink)] leading-tight mb-4 ${isSmallScreen ? 'text-2xl sm:text-3xl' : 'text-4xl'}`}>
+              <h4 className="font-serif text-3xl sm:text-4xl font-light text-[var(--ink)] leading-tight mb-4">
                 {service.title}
               </h4>
               <p className="font-sans text-sm text-[var(--ink-soft)] font-light leading-relaxed mb-6 max-w-md">
                 {service.description}
               </p>
               <div className="pt-6 border-t border-[var(--line)]">
-                <span className={`font-serif text-[var(--accent-deep)] font-light tabular-nums ${isSmallScreen ? 'text-3xl' : 'text-5xl'}`}>
+                <span className="font-serif text-4xl sm:text-5xl text-[var(--accent-deep)] font-light tabular-nums">
                   {service.price}
-                  <span className={isSmallScreen ? 'text-lg' : 'text-2xl'}>{service.priceSuffix}</span>
+                  <span className="text-xl sm:text-2xl">{service.priceSuffix}</span>
                 </span>
                 <span className="block font-sans text-[11px] uppercase tracking-[0.25em] text-[var(--ink-faint)] mt-2">
                   {service.duration}
