@@ -134,6 +134,10 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
 
     const ctx = gsap.context(() => {
       const distance = () => trackRef.current!.scrollWidth - window.innerWidth;
+      // On touch/small screens, stretch the scroll trajectory and add more
+      // scrub inertia so the horizontal pan feels slow and smooth.
+      const isSmall = window.innerWidth < 1024;
+      const scrollFactor = isSmall ? 1.8 : 1;
 
       gsap.to(trackRef.current, {
         x: () => -distance(),
@@ -141,9 +145,9 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
         scrollTrigger: {
           trigger: wrapRef.current,
           start: 'top top',
-          end: () => `+=${distance()}`,
+          end: () => `+=${distance() * scrollFactor}`,
           pin: true,
-          scrub: 0.8,
+          scrub: isSmall ? 1.5 : 0.8,
           invalidateOnRefresh: true,
           anticipatePin: 1,
         },
