@@ -179,7 +179,7 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
         {services.map((service) => (
           <article
             key={service.id}
-            className="relative shrink-0 w-[78vw] sm:w-[480px] h-[70vh] sm:h-[600px] max-h-[600px] bg-[var(--canvas-2)] border border-[var(--line)] transition-colors duration-500 [@media(hover:hover)]:hover:border-[var(--accent)] overflow-hidden group"
+            className="relative shrink-0 w-[78vw] sm:w-[480px] h-[70vh] sm:h-[600px] max-h-[600px] bg-[var(--canvas-2)] border border-[var(--line)] rounded-2xl transition-colors duration-500 [@media(hover:hover)]:hover:border-[var(--accent)] overflow-hidden group"
           >
             <div className="absolute inset-0">
               <Image

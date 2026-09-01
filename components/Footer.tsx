@@ -191,8 +191,8 @@ export function Footer() {
         <div className="pt-8 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between font-sans text-xs text-[var(--ink-faint)] font-light">
           <p>© {new Date().getFullYear()} TÔDCACHOS · Atelier de Lina Pinho. Todos os direitos reservados.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <a href="#" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Privacidade</a>
-            <a href="#" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Termos</a>
+            <a href="/privacidade" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Privacidade</a>
+            <a href="/termos" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Termos</a>
           </div>
         </div>
       </div>
