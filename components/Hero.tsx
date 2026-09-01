@@ -125,7 +125,7 @@ export function Hero() {
           className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em]"
           style={{ color: 'rgba(237,232,222,0.75)' }}
         >
-          Hermelina Pinho
+          Lina Pinho
         </span>
         <span
           className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em]"

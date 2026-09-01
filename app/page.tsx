@@ -17,7 +17,7 @@ export default function Home() {
       {/* 2. Manifesto: word-by-word reveal on light */}
       <About />
 
-      {/* 3. A Fundadora: Hermelina Pinho story */}
+      {/* 3. A Fundadora: Lina Pinho story */}
       <Owner />
 
       {/* 4. Filosofia: the four values */}

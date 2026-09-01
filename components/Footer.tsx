@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock, Calendar } from 'lucide-react';
 import { AnimatedSection } from './ui/AnimatedSection';
 
@@ -38,11 +39,16 @@ export function Footer() {
           {/* Column 1: Brand & Reserva */}
           <AnimatedSection direction="up" className="flex flex-col justify-between">
             <div>
-              <h2 className="font-serif text-4xl sm:text-5xl text-[var(--ink)] tracking-wider mb-3 leading-none" style={{ fontFamily: 'var(--font-display)' }}>
-                TÔDCACHOS
-              </h2>
+              <Image
+                src="/images/logo-todcachos.png"
+                alt="TÔDCACHOS · Lina Pinho"
+                width={912}
+                height={273}
+                className="w-full max-w-[300px] h-auto mb-4"
+                priority
+              />
               <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-5 font-medium">
-                Atelier, Lisboa
+                Atelier de Cachos, Quinta do Conde
               </p>
               <p
                 className="font-serif italic text-sm text-[var(--ink-soft)] font-light leading-relaxed mb-6"
@@ -51,7 +57,7 @@ export function Footer() {
                 Não é só curvatura, é história, é movimento, é autenticidade.
               </p>
               <p className="font-sans text-sm text-[var(--ink-soft)] font-light leading-relaxed mb-6">
-                <span className="text-[var(--ink)]">Hermelina Pinho</span>. Mais de 25 anos transformando curvaturas, celebrando a identidade de cada madeixa cacheada, crespa e afra.
+                <span className="text-[var(--ink)]">Lina Pinho</span>. Mais de 25 anos transformando curvaturas, celebrando a identidade de cada madeixa cacheada, crespa e afra.
               </p>
             </div>
 
@@ -63,7 +69,7 @@ export function Footer() {
                 Diagnóstico capilar personalizado. Agendamento prévio para atendimento exclusivo.
               </p>
               <a
-                href="https://wa.me/351000000000"
+                href="https://wa.me/351925515466"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full text-center py-4 min-h-[44px] flex items-center justify-center bg-[var(--accent)] text-[var(--canvas)] font-sans text-xs uppercase tracking-[0.25em] hover:bg-[var(--accent-deep)] transition-colors font-medium"
@@ -80,18 +86,26 @@ export function Footer() {
               <h3 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--accent)] mb-4 font-medium">
                 Atendimento, Localização
               </h3>
-              <ul className="space-y-1 font-sans text-sm text-[var(--ink-soft)] font-light">
-                <li className="flex items-start py-2">
+              <ul className="space-y-3 font-sans text-sm text-[var(--ink-soft)] font-light">
+                <li className="flex items-start py-1">
                   <MapPin className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0 mt-1" />
-                  <span>Atelier TÔDCACHOS<br />Lisboa, Portugal</span>
+                  <span><span className="text-[var(--ink)]">Quinta do Conde</span><br />R. das Descobertas 3053, 2975-350</span>
+                </li>
+                <li className="flex items-start py-1">
+                  <MapPin className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0 mt-1" />
+                  <span>Av. Bento Gonçalves 26, 1º Piso 163K<br />2910 Setúbal</span>
+                </li>
+                <li className="flex items-start py-1">
+                  <MapPin className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0 mt-1" />
+                  <span>R. Irene Lisboa 308A, 2650-419<br />Brandoa</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0" />
-                  <a href="tel:+351900000000" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>+351 900 000 000</a>
+                  <a href="tel:+351925515466" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>925 515 466</a>
                 </li>
                 <li className="flex items-center">
-                  <Mail className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0" />
-                  <a href="mailto:contacto@todcachos.pt" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>contacto@todcachos.pt</a>
+                  <Phone className="w-4 h-4 text-[var(--accent-deep)] mr-3 shrink-0" />
+                  <a href="tel:+351960061813" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>960 061 813</a>
                 </li>
               </ul>
             </div>
@@ -159,8 +173,8 @@ export function Footer() {
 
             <div className="relative aspect-square w-full border border-[var(--line)] overflow-hidden bg-[var(--canvas)]">
               <iframe
-                title="Localização do Atelier TÔDCACHOS, Lisboa"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.149206764516!2d-9.147863723467466!3d38.72081515679237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91bda3039d91f24d%3A0xf67305dfc5e00!2sAv.%20da%20Liberdade%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt"
+                title="Localização do Atelier TÔDCACHOS, Quinta do Conde"
+                src="https://maps.google.com/maps?q=Rua%20das%20Descobertas%203053%2C%202975-350%20Quinta%20do%20Conde&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -175,7 +189,7 @@ export function Footer() {
 
         {/* Bottom Copyright bar */}
         <div className="pt-8 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between font-sans text-xs text-[var(--ink-faint)] font-light">
-          <p>© {new Date().getFullYear()} TÔDCACHOS · Atelier de Hermelina Pinho. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} TÔDCACHOS · Atelier de Lina Pinho. Todos os direitos reservados.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <a href="#" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Privacidade</a>
             <a href="#" className="flex items-center min-h-[44px] hover:text-[var(--accent)] transition-colors" style={{ transitionDuration: '0.9s' }}>Termos</a>

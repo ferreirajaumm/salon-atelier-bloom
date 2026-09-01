@@ -130,7 +130,7 @@ export function Gallery() {
             Portfólio
           </h2>
           <p className="font-sans text-base sm:text-lg text-[var(--ink-soft)] font-light max-w-[60ch] leading-relaxed mt-5">
-            Resultados reais de cortes, tratamentos e iluminação desenvolvidos para valorizar a textura natural, assinados por Hermelina Pinho.
+            Resultados reais de cortes, tratamentos e iluminação desenvolvidos para valorizar a textura natural, assinados por Lina Pinho.
           </p>
         </header>
 

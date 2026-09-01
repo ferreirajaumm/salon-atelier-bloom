@@ -87,7 +87,7 @@ export function About() {
           transition={{ duration: 1.2, ease, delay: reduceMotion ? 0 : 0.3 }}
           className="block font-accent italic text-sm text-[var(--ink-soft)] text-center mt-16 md:mt-20 tracking-wide"
         >
-          Hermelina Pinho, Lisboa
+          Lina Pinho, Lisboa
         </motion.span>
       </div>
     </section>

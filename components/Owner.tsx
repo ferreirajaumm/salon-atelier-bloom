@@ -113,7 +113,7 @@ export function Owner() {
               <div ref={photoRef} className="absolute inset-0 w-full h-[110%] -top-[5%]">
                 <Image
                   src="/images/canva-img-1.jpg"
-                  alt="Hermelina Pinho, fundadora da Tôdcachos"
+                  alt="Lina Pinho, fundadora da Tôdcachos"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover object-center"
@@ -137,7 +137,7 @@ export function Owner() {
               className="reveal-line font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-[0.95] mb-12 tracking-tight"
               style={{ color: 'var(--ink)' }}
             >
-              HERMELINA PINHO
+              LINA PINHO
             </h2>
 
             <div className="max-w-[60ch]">

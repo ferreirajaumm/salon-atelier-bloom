@@ -33,12 +33,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: 'TÔDCACHOS | Especialista em Cabelos Cacheados, Crespos & Afros em Lisboa',
-  description: 'Atelier TÔDCACHOS em Lisboa: especialista em cabelos cacheados, crespos e afros. Corte, madeixas iluminadas, cachoterapia, powerterapia e finalização que respeitam a sua curvatura. Por Hermelina Pinho, 25+ anos de experiência.',
-  keywords: ['tôdcachos', 'hermelina pinho', 'cabeleireiro cacheados lisboa', 'salão cabelos crespos lisboa', 'corte cacheados', 'corte afro lisboa', 'madeixas cacheados', 'cachoterapia', 'tratamento capilar cacheados', 'especialista cachos portugal'],
+  description: 'Atelier TÔDCACHOS em Lisboa: especialista em cabelos cacheados, crespos e afros. Corte, madeixas iluminadas, cachoterapia, powerterapia e finalização que respeitam a sua curvatura. Por Lina Pinho, 25+ anos de experiência.',
+  keywords: ['tôdcachos', 'lina pinho', 'cabeleireiro cacheados quinta do conde', 'salão cabelos crespos setúbal', 'corte cacheados', 'corte afro lisboa', 'madeixas cacheados', 'cachoterapia', 'tratamento capilar cacheados', 'especialista cachos portugal'],
   alternates: { canonical: '/' },
   openGraph: {
     title: 'TÔDCACHOS | Especialista em Cabelos Cacheados, Crespos & Afros',
-    description: 'Não é só curvatura, é história, é movimento, é autenticidade. Hermelina Pinho, 25+ anos transformando curvaturas em Lisboa.',
+    description: 'Não é só curvatura, é história, é movimento, é autenticidade. Lina Pinho, 25+ anos transformando curvaturas em Lisboa.',
     type: 'website',
     locale: 'pt_PT',
     url: SITE_URL,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'TÔDCACHOS | Especialista em Cabelos Cacheados, Crespos & Afros',
-    description: 'Atelier especializado em cachos, crespos e afros em Lisboa. Por Hermelina Pinho.',
+    description: 'Atelier especializado em cachos, crespos e afros em Lisboa. Por Lina Pinho.',
     images: ['/images/hero-poster.jpg'],
   },
   robots: { index: true, follow: true },
