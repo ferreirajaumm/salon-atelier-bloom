@@ -4,36 +4,36 @@
 
 @layer base {
   :root {
-    /* Quiet luxury light palette: warm neutral, airy */
-    --canvas: #f4efe9;        /* off-white cru, main bg */
-    --canvas-2: #ece4da;      /* sand, alternating sections */
-    --canvas-3: #e3d8ca;      /* deeper sand for slight contrast */
-    --ink: #2b2521;           /* near-black warm brown, primary text */
-    --ink-soft: #6b6157;      /* secondary text */
-    --ink-faint: #9a9086;     /* captions, faint labels */
-    --line: #d8cec1;          /* hairlines */
-    --accent: #a9805a;        /* soft terracotta-bronze */
-    --accent-deep: #8a6544;   /* accent for text on light, AA contrast */
+    /* Natural organic palette: Emerald Noir, Antique Gold, Stone Oyster, Onyx Ink */
+    --canvas: #ede8de;        /* Stone Oyster — off-white base bg */
+    --canvas-2: #e6e0d3;      /* soft oyster, alternating sections */
+    --canvas-3: #ddd5c5;      /* deeper oyster for slight contrast */
+    --ink: #1a1a1a;           /* Onyx Ink — primary text, strong contrast */
+    --ink-soft: #4a4a45;      /* secondary text, softened onyx */
+    --ink-faint: #8a877e;     /* captions, faint labels */
+    --line: #cfc7b7;          /* hairlines, warm neutral */
+    --accent: #b08d3e;        /* Antique Gold — details, borders, icons */
+    --accent-deep: #16332c;   /* Emerald Noir — headings, highlights, AA contrast */
 
     /* legacy aliases kept so any leftover class still resolves */
-    --background: #f4efe9;
-    --foreground: #2b2521;
-    --gold: #a9805a;
-    --gold-light: #c8a988;
-    --gold-dark: #8a6544;
+    --background: #ede8de;
+    --foreground: #1a1a1a;
+    --gold: #b08d3e;
+    --gold-light: #c9a95f;
+    --gold-dark: #16332c;
   }
 }
 
 @theme {
-  --color-canvas: #f4efe9;
-  --color-canvas-2: #ece4da;
-  --color-canvas-3: #e3d8ca;
-  --color-ink: #2b2521;
-  --color-ink-soft: #6b6157;
-  --color-ink-faint: #9a9086;
-  --color-line: #d8cec1;
-  --color-accent: #a9805a;
-  --color-accent-deep: #8a6544;
+  --color-canvas: #ede8de;
+  --color-canvas-2: #e6e0d3;
+  --color-canvas-3: #ddd5c5;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #4a4a45;
+  --color-ink-faint: #8a877e;
+  --color-line: #cfc7b7;
+  --color-accent: #b08d3e;
+  --color-accent-deep: #16332c;
 }
 
 html {

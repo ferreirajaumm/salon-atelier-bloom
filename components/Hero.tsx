@@ -88,7 +88,7 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, rgba(244,239,233,0.08) 0%, rgba(169,128,90,0.10) 40%, rgba(43,37,33,0.18) 100%)',
+            'linear-gradient(180deg, rgba(237,232,222,0.08) 0%, rgba(176,141,62,0.10) 40%, rgba(26,26,26,0.18) 100%)',
         }}
       />
 
@@ -97,7 +97,7 @@ export function Hero() {
         className="absolute inset-x-0 top-0 h-32"
         style={{
           background:
-            'linear-gradient(180deg, rgba(43,37,33,0.30) 0%, transparent 100%)',
+            'linear-gradient(180deg, rgba(26,26,26,0.30) 0%, transparent 100%)',
         }}
       />
 
@@ -106,7 +106,7 @@ export function Hero() {
         className="absolute inset-x-0 bottom-0 h-[55%] z-[1]"
         style={{
           background:
-            'linear-gradient(180deg, transparent 0%, rgba(43,37,33,0.35) 60%, rgba(43,37,33,0.55) 100%)',
+            'linear-gradient(180deg, transparent 0%, rgba(26,26,26,0.35) 60%, rgba(26,26,26,0.55) 100%)',
         }}
       />
 
@@ -123,13 +123,13 @@ export function Hero() {
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-10 lg:px-16 pt-7">
         <span
           className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em]"
-          style={{ color: 'rgba(244,239,233,0.75)' }}
+          style={{ color: 'rgba(237,232,222,0.75)' }}
         >
           Hermelina Pinho
         </span>
         <span
           className="font-[var(--font-body)] text-[10px] sm:text-[11px] uppercase tracking-[0.4em]"
-          style={{ color: 'rgba(244,239,233,0.75)' }}
+          style={{ color: 'rgba(237,232,222,0.75)' }}
         >
           Lisboa
         </span>
@@ -146,8 +146,8 @@ export function Hero() {
           animate="visible"
           className="font-[var(--font-display)] leading-[0.82] tracking-[-0.03em] font-normal mb-8 sm:mb-10 whitespace-nowrap"
           style={{
-            color: '#f4efe9',
-            textShadow: '0 2px 60px rgba(43,37,33,0.25)',
+            color: '#ede8de',
+            textShadow: '0 2px 60px rgba(26,26,26,0.25)',
             fontSize: 'min(12.5vw, 13rem)',
           }}
         >
@@ -162,7 +162,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             className="font-[var(--font-accent)] italic text-[clamp(1.25rem,3vw,1.75rem)] leading-[1.2] max-w-2xl"
-            style={{ color: 'rgba(244,239,233,0.92)' }}
+            style={{ color: 'rgba(237,232,222,0.92)' }}
           >
             não é só curvatura, é história, é movimento, é autenticidade.
           </motion.p>
@@ -178,8 +178,8 @@ export function Hero() {
               href="#servicos"
               className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] pb-1 border-b transition-colors duration-300"
               style={{
-                color: 'rgba(244,239,233,0.85)',
-                borderColor: 'rgba(244,239,233,0.40)',
+                color: 'rgba(237,232,222,0.85)',
+                borderColor: 'rgba(237,232,222,0.40)',
               }}
             >
               Ver Serviços
@@ -188,8 +188,8 @@ export function Hero() {
               href="#contactos"
               className="font-[var(--font-body)] text-[11px] uppercase tracking-[0.3em] px-7 py-4 transition-colors duration-300"
               style={{
-                color: '#2b2521',
-                backgroundColor: '#e8dcc8',
+                color: '#1a1a1a',
+                backgroundColor: '#e6e0d3',
               }}
             >
               Marcar Horário

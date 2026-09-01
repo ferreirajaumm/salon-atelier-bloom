@@ -80,7 +80,7 @@ export function Reels() {
                   <p className="font-sans text-sm text-white/85 mb-4 line-clamp-1" style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}>
                     {reel.description}
                   </p>
-                  <span className="inline-flex items-center text-xs font-sans uppercase tracking-wider text-white/90 group-hover:text-[#e8c789] transition-colors" style={{ transitionDuration: '0.9s' }}>
+                  <span className="inline-flex items-center text-xs font-sans uppercase tracking-wider text-white/90 group-hover:text-[#c9a95f] transition-colors" style={{ transitionDuration: '0.9s' }}>
                     Ver no Instagram
                   </span>
                 </div>

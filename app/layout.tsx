@@ -27,7 +27,7 @@ const radley = Radley({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#f4efe9',
+  themeColor: '#ede8de',
 };
 
 export const metadata: Metadata = {
@@ -64,7 +64,7 @@ export default function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className="bg-[#f4efe9] text-[#2b2521] antialiased">
+      <body className="bg-[#ede8de] text-[#1a1a1a] antialiased">
         {children}
       </body>
     </html>

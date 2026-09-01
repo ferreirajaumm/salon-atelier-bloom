@@ -189,7 +189,7 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
                 sizes="(max-width: 640px) 78vw, 480px"
                 className="object-cover transition-transform duration-700 [@media(hover:hover)]:group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(251,245,239,0.85)] via-[rgba(251,245,239,0.3)] to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(237,232,222,0.85)] via-[rgba(237,232,222,0.3)] to-transparent" />
             </div>
 
             <div className="relative h-full p-7 sm:p-10 flex flex-col justify-end">
@@ -319,7 +319,7 @@ function ServiceRow({
             sizes="260px"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(43,37,33,0.18)] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(26,26,26,0.18)] via-transparent to-transparent" />
         </motion.div>
       )}
     </motion.div>
