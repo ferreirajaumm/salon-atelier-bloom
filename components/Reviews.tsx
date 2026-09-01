@@ -1,13 +1,19 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 
 interface Review {
   name: string;
   rating: number;
   text: string;
   date: string;
+  url?: string;
 }
+
+// Link do perfil no Google Maps (abre a ficha do negocio com as avaliacoes).
+// Fallback usado quando a review nao tem URL propria.
+const GOOGLE_REVIEWS_URL =
+  'https://www.google.com/maps/search/?api=1&query=T%C3%94DCACHOS+Quinta+do+Conde';
 
 // Avaliações reais do Google Business (TÔDCACHOS - Quinta do Conde)
 // Para adicionar mais: copie nome + texto do Google e acrescente um objeto abaixo.
@@ -81,6 +87,43 @@ function GoogleGlyph() {
   );
 }
 
+function ReviewCard({ review }: { review: Review }) {
+  return (
+    <a
+      href={review.url ?? GOOGLE_REVIEWS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Ver avaliação de ${review.name} no Google`}
+      className="group flex flex-col shrink-0 w-[85vw] sm:w-[380px] lg:w-[400px] border border-[var(--line)] rounded-2xl p-7 sm:p-8 bg-[var(--canvas-2)] hover:border-[var(--accent)] hover:shadow-[0_8px_30px_rgba(22,51,44,0.08)] transition-all duration-500 cursor-pointer"
+    >
+      <Stars rating={review.rating} />
+      <blockquote className="font-sans text-sm text-[var(--ink-soft)] font-light leading-relaxed mt-5 mb-8 flex-1">
+        {review.text}
+      </blockquote>
+      <figcaption className="flex items-center justify-between pt-5 border-t border-[var(--line)]">
+        <div className="flex items-center gap-3">
+          <span
+            className="w-9 h-9 rounded-full flex items-center justify-center font-serif text-sm text-[var(--canvas)] shrink-0"
+            style={{ backgroundColor: 'var(--accent-deep)' }}
+            aria-hidden="true"
+          >
+            {review.name.charAt(0)}
+          </span>
+          <div className="flex flex-col">
+            <span className="font-sans text-sm text-[var(--ink)] font-medium leading-tight">
+              {review.name}
+            </span>
+            <span className="font-sans text-[11px] text-[var(--ink-faint)]">
+              {review.date}
+            </span>
+          </div>
+        </div>
+        <GoogleGlyph />
+      </figcaption>
+    </a>
+  );
+}
+
 export function Reviews() {
   const reduce = useReducedMotion();
 
@@ -106,7 +149,7 @@ export function Reviews() {
 
           {/* Google rating badge */}
           <a
-            href="https://www.google.com/search?q=TÔDCACHOS+-+Quinta+do+Conde"
+            href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-4 border border-[var(--line)] rounded-2xl px-6 py-4 bg-[var(--canvas-2)] hover:border-[var(--accent)] transition-colors shrink-0"
@@ -125,49 +168,38 @@ export function Reviews() {
           </a>
         </header>
 
-        {/* Review cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {reviews.map((review, i) => (
-            <motion.figure
-              key={review.name}
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-10%' }}
-              transition={{
-                duration: 0.9,
-                delay: reduce ? 0 : i * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="flex flex-col border border-[var(--line)] rounded-2xl p-7 sm:p-8 bg-[var(--canvas-2)]"
-            >
-              <Stars rating={review.rating} />
-              <blockquote className="font-sans text-sm text-[var(--ink-soft)] font-light leading-relaxed mt-5 mb-8 flex-1">
-                {review.text}
-              </blockquote>
-              <figcaption className="flex items-center justify-between pt-5 border-t border-[var(--line)]">
-                <div className="flex items-center gap-3">
-                  <span
-                    className="w-9 h-9 rounded-full flex items-center justify-center font-serif text-sm text-[var(--canvas)] shrink-0"
-                    style={{ backgroundColor: 'var(--accent-deep)' }}
-                    aria-hidden="true"
-                  >
-                    {review.name.charAt(0)}
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="font-sans text-sm text-[var(--ink)] font-medium leading-tight">
-                      {review.name}
-                    </span>
-                    <span className="font-sans text-[11px] text-[var(--ink-faint)]">
-                      {review.date}
-                    </span>
-                  </div>
-                </div>
-                <GoogleGlyph />
-              </figcaption>
-            </motion.figure>
-          ))}
-        </div>
       </div>
+
+      {/* Review carousel — continuous, seamless horizontal auto-scroll */}
+      {reduce ? (
+        <div className="max-w-6xl mx-auto px-6 sm:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {reviews.map((review) => (
+              <ReviewCard key={review.name} review={review} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div
+          className="relative overflow-hidden"
+          style={{
+            maskImage:
+              'linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)',
+            WebkitMaskImage:
+              'linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)',
+          }}
+        >
+          {/* duplicated track for a perfect -50% loop; gap-8 = 2rem */}
+          <div
+            className="reviews-marquee gap-6 lg:gap-8 py-2"
+            style={{ ['--marquee-duration' as string]: '70s' }}
+          >
+            {[...reviews, ...reviews].map((review, i) => (
+              <ReviewCard key={`${review.name}-${i}`} review={review} />
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

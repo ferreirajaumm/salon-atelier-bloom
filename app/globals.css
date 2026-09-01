@@ -124,3 +124,23 @@ body {
 .accent-border {
   border: 1px solid var(--accent);
 }
+
+/* Reviews marquee — continuous, seamless horizontal loop */
+.reviews-marquee {
+  display: flex;
+  width: max-content;
+  animation: reviewsScroll var(--marquee-duration, 60s) linear infinite;
+}
+.reviews-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes reviewsScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee {
+    animation: none;
+    transform: none;
+  }
+}
