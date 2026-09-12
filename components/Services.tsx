@@ -10,16 +10,17 @@ import { WHATSAPP_LINK } from '@/lib/whatsapp';
 
 gsap.registerPlugin(ScrollTrigger);
 
-type ServiceCategory = 'Tratamentos' | 'Finalização' | 'Rituais';
+type ServiceCategory = 'Tratamentos' | 'Corte & Cor' | 'Finalização' | 'Outros';
 
 interface ServiceItem {
   id: string;
   category: ServiceCategory;
   title: string;
   description: string;
-  price: string;
+  price?: string;
   priceSuffix?: string;
-  duration: string;
+  pricePrefix?: string;
+  duration?: string;
   image: string;
   featured?: boolean;
 }
@@ -33,8 +34,7 @@ const servicesList: ServiceItem[] = [
       'Ritual exclusivo dedicado aos fios cacheados e crespos. Hidratação profunda, definição e respeito integral à curvatura natural.',
     price: '40',
     priceSuffix: '€',
-    duration: '60 min',
-    image: '/images/cliente-cachos-castanhos.jpg',
+    image: '/images/servico-cachoterapia.jpg',
   },
   {
     id: 'powerterapia',
@@ -44,20 +44,18 @@ const servicesList: ServiceItem[] = [
       'Tratamento intensivo de recuperação para fios desvitalizados. Reposição de massa, força e brilho em sessão única.',
     price: '70',
     priceSuffix: '€',
-    duration: '90 min',
-    image: '/images/featured-powerterapia.jpg',
+    image: '/images/servico-powerterapia.jpg',
     featured: true,
   },
   {
     id: 'chaterapia',
-    category: 'Rituais',
+    category: 'Tratamentos',
     title: 'Chaterapia',
     description:
       'Terapia herbal infundida com chás nobres e ativos botânicos. Nutrição calmante para couro cabeludo e fios.',
-    price: '45',
+    price: '60',
     priceSuffix: '€',
-    duration: '60 min',
-    image: '/images/port-coloracao.jpg',
+    image: '/images/servico-cachoterapia.jpg',
   },
   {
     id: 'ozonioterapia',
@@ -65,63 +63,138 @@ const servicesList: ServiceItem[] = [
     title: 'Ozonioterapia',
     description:
       'Aplicação de ozono medicinal para oxigenação do couro cabeludo. Estimula crescimento, fortalece a raiz e revitaliza.',
-    price: '55',
+    price: '40',
     priceSuffix: '€',
-    duration: '50 min',
-    image: '/images/port-tratamento.jpg',
+    image: '/images/servico-ozonioterapia.jpg',
   },
   {
     id: 'blends-oleos',
-    category: 'Rituais',
+    category: 'Tratamentos',
     title: 'Blends de Óleos',
     description:
       'Misturas personalizadas de óleos vegetais prensados a frio. Nutrição ancestral, brilho espelhado e selagem dos fios.',
-    price: '35',
+    price: '60',
     priceSuffix: '€',
-    duration: '40 min',
-    image: '/images/port-finalizacao.jpg',
+    image: '/images/servico-blends-oleos.jpg',
   },
   {
     id: 'corte',
-    category: 'Finalização',
+    category: 'Corte & Cor',
     title: 'Corte',
     description:
       'Corte técnico desenhado para a sua curvatura. Realça o formato natural dos cachos, dá movimento e facilita o dia a dia.',
-    price: '35',
+    price: '40',
     priceSuffix: '€',
-    duration: '45 min',
-    image: '/images/featured-corte.jpg',
+    image: '/images/port-corte.jpg',
     featured: true,
   },
   {
     id: 'definicao',
     category: 'Finalização',
-    title: 'Definição',
+    title: 'Definição / Finalização',
     description:
       'Ativação técnica da curvatura com finalização profissional. Cachos definidos, sem frizz, com duração prolongada.',
-    price: '30',
+    price: '10',
     priceSuffix: '€',
-    duration: '45 min',
-    image: '/images/cliente-cachos-loiros.jpg',
+    image: '/images/servico-definicao.jpg',
   },
   {
     id: 'secagem',
     category: 'Finalização',
-    title: 'Secagem com Difusor',
+    title: 'Secagem',
     description:
       'Secagem técnica com difusor profissional. Cabelo seco rapidamente sem comprometer a definição dos cachos.',
+    price: '20',
+    priceSuffix: '€',
+    image: '/images/servico-secagem.jpg',
+  },
+  {
+    id: 'alta-frequencia',
+    category: 'Tratamentos',
+    title: 'Alta Frequência',
+    description:
+      'Cuidado complementar para o couro cabeludo, integrado à experiência de tratamento dos fios.',
+    price: '30',
+    priceSuffix: '€',
+    image: '/images/servico-alta-frequencia.jpg',
+  },
+  {
+    id: 'photon-lizze',
+    category: 'Tratamentos',
+    title: 'Photon Lizze',
+    description:
+      'Tecnologia de cuidado capilar com Photon Lizze, conforme a necessidade dos fios.',
     price: '10',
     priceSuffix: '€',
-    duration: '30 min',
+    image: '/images/servico-photon-lizze.jpg',
+  },
+  {
+    id: 'higienizacao',
+    category: 'Tratamentos',
+    title: 'Higienização',
+    description:
+      'Higienização dos fios e do couro cabeludo como etapa de cuidado e preparação.',
+    price: '30',
+    priceSuffix: '€',
+    image: '/images/servico-higienizacao.jpg',
+  },
+  {
+    id: 'madeixas-iluminados',
+    category: 'Corte & Cor',
+    title: 'Madeixas & Iluminados',
+    description:
+      'Serviço de cor personalizado para criar luminosidade e dimensão nos fios.',
+    pricePrefix: 'Desde',
+    price: '120',
+    priceSuffix: '€',
+    image: '/images/port-madeixas.jpg',
+  },
+  {
+    id: 'soltura-cachos',
+    category: 'Corte & Cor',
+    title: 'Soltura de Cachos',
+    description:
+      'Serviço personalizado de soltura de cachos, respeitando a textura e o objetivo de cada cabelo.',
+    pricePrefix: 'Desde',
+    price: '90',
+    priceSuffix: '€',
+    image: '/images/cliente-cachos-castanhos.jpg',
+  },
+  {
+    id: 'coloracao',
+    category: 'Corte & Cor',
+    title: 'Coloração',
+    description:
+      'Coloração personalizada realizada de acordo com o resultado desejado.',
+    pricePrefix: 'Desde',
+    price: '60',
+    priceSuffix: '€',
+    image: '/images/port-coloracao.jpg',
+  },
+  {
+    id: 'penteados',
+    category: 'Finalização',
+    title: 'Penteados',
+    description:
+      'Produção personalizada para ocasiões especiais, com proposta definida no atendimento.',
     image: '/images/port-finalizacao.jpg',
+  },
+  {
+    id: 'diagnostico-capilar',
+    category: 'Outros',
+    title: 'Diagnóstico Capilar',
+    description:
+      'Avaliação personalizada para compreender as necessidades dos fios e orientar o cuidado.',
+    image: '/images/port-tratamento.jpg',
   },
 ];
 
 const categories: Array<'Todos' | ServiceCategory> = [
   'Todos',
   'Tratamentos',
+  'Corte & Cor',
   'Finalização',
-  'Rituais',
+  'Outros',
 ];
 
 function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
@@ -203,16 +276,28 @@ function FeaturedHorizontalPan({ services }: { services: ServiceItem[] }) {
                 {service.description}
               </p>
               <div className="pt-6 border-t border-[var(--line)]">
-                <span className="block font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--ink-faint)] mb-1">
-                  Desde
-                </span>
-                <span className="font-serif text-4xl sm:text-5xl text-[var(--accent-deep)] font-light tabular-nums">
-                  {service.price}
-                  <span className="text-xl sm:text-2xl">{service.priceSuffix}</span>
-                </span>
-                <span className="block font-sans text-[11px] uppercase tracking-[0.25em] text-[var(--ink-faint)] mt-2">
-                  {service.duration}
-                </span>
+                {service.price ? (
+                  <>
+                    {service.pricePrefix && (
+                      <span className="block font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--ink-faint)] mb-1">
+                        {service.pricePrefix}
+                      </span>
+                    )}
+                    <span className="font-serif text-4xl sm:text-5xl text-[var(--accent-deep)] font-light tabular-nums">
+                      {service.price}
+                      <span className="text-xl sm:text-2xl">{service.priceSuffix}</span>
+                    </span>
+                  </>
+                ) : (
+                  <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-[var(--ink-faint)]">
+                    Sob consulta
+                  </span>
+                )}
+                {service.duration && (
+                  <span className="block font-sans text-[11px] uppercase tracking-[0.25em] text-[var(--ink-faint)] mt-2">
+                    {service.duration}
+                  </span>
+                )}
               </div>
             </div>
           </article>
@@ -234,6 +319,8 @@ function ServiceRow({
   const mouseY = useMotionValue(0);
   const [imageVisible, setImageVisible] = useState(false);
   const reduceMotion = useReducedMotion();
+  const imageX = useTransform(mouseX, (v) => v - 130);
+  const imageY = useTransform(mouseY, (v) => v - 160);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (reduceMotion) return;
@@ -283,22 +370,32 @@ function ServiceRow({
 
         {/* Duration + Price */}
         <div className="col-span-12 sm:col-span-3 sm:text-right flex sm:block items-baseline justify-between">
-          <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-[var(--ink-faint)]">
-            {service.duration}
-          </span>
-          <div className="flex items-baseline gap-1 sm:justify-end">
-            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-[var(--ink-faint)] self-center mr-1">
-              Desde
+          {service.duration && (
+            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-[var(--ink-faint)]">
+              {service.duration}
             </span>
-            <span className="font-serif text-3xl sm:text-4xl text-[var(--accent-deep)] font-light tabular-nums leading-none">
-              {service.price}
-            </span>
-            {service.priceSuffix && (
-              <span className="font-serif text-xl text-[var(--accent)] font-light">
-                {service.priceSuffix}
+          )}
+          {service.price ? (
+            <div className="flex items-baseline gap-1 sm:justify-end">
+              {service.pricePrefix && (
+                <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-[var(--ink-faint)] self-center mr-1">
+                  {service.pricePrefix}
+                </span>
+              )}
+              <span className="font-serif text-3xl sm:text-4xl text-[var(--accent-deep)] font-light tabular-nums leading-none">
+                {service.price}
               </span>
-            )}
-          </div>
+              {service.priceSuffix && (
+                <span className="font-serif text-xl text-[var(--accent)] font-light">
+                  {service.priceSuffix}
+                </span>
+              )}
+            </div>
+          ) : (
+            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-[var(--ink-faint)]">
+              Sob consulta
+            </span>
+          )}
         </div>
       </div>
 
@@ -314,8 +411,8 @@ function ServiceRow({
           transition={{ duration: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="pointer-events-none hidden md:block absolute top-1/2 -translate-y-1/2 right-[28%] z-20 w-[260px] h-[320px] overflow-hidden rounded-2xl border border-[var(--line)]"
           style={{
-            x: useTransform(mouseX, (v) => v - 130),
-            y: useTransform(mouseY, (v) => v - 160),
+            x: imageX,
+            y: imageY,
           }}
         >
           <Image
