@@ -33,6 +33,7 @@ const servicesList: ServiceItem[] = [
     description:
       'Ritual exclusivo dedicado aos fios cacheados e crespos. Hidratação profunda, definição e respeito integral à curvatura natural.',
     price: '40',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-cachoterapia.jpg',
   },
@@ -43,6 +44,7 @@ const servicesList: ServiceItem[] = [
     description:
       'Tratamento intensivo de recuperação para fios desvitalizados. Reposição de massa, força e brilho em sessão única.',
     price: '70',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-powerterapia.jpg',
     featured: true,
@@ -53,7 +55,8 @@ const servicesList: ServiceItem[] = [
     title: 'Chaterapia',
     description:
       'Terapia herbal infundida com chás nobres e ativos botânicos. Nutrição calmante para couro cabeludo e fios.',
-    price: '60',
+    price: '30',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-cachoterapia.jpg',
   },
@@ -63,7 +66,8 @@ const servicesList: ServiceItem[] = [
     title: 'Ozonioterapia',
     description:
       'Aplicação de ozono medicinal para oxigenação do couro cabeludo. Estimula crescimento, fortalece a raiz e revitaliza.',
-    price: '40',
+    price: '60',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-ozonioterapia.jpg',
   },
@@ -73,7 +77,8 @@ const servicesList: ServiceItem[] = [
     title: 'Blends de Óleos',
     description:
       'Misturas personalizadas de óleos vegetais prensados a frio. Nutrição ancestral, brilho espelhado e selagem dos fios.',
-    price: '60',
+    price: '40',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-blends-oleos.jpg',
   },
@@ -84,6 +89,7 @@ const servicesList: ServiceItem[] = [
     description:
       'Corte técnico desenhado para a sua curvatura. Realça o formato natural dos cachos, dá movimento e facilita o dia a dia.',
     price: '40',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/port-corte.jpg',
     featured: true,
@@ -94,7 +100,8 @@ const servicesList: ServiceItem[] = [
     title: 'Definição / Finalização',
     description:
       'Ativação técnica da curvatura com finalização profissional. Cachos definidos, sem frizz, com duração prolongada.',
-    price: '10',
+    price: '20',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-definicao.jpg',
   },
@@ -104,7 +111,8 @@ const servicesList: ServiceItem[] = [
     title: 'Secagem',
     description:
       'Secagem técnica com difusor profissional. Cabelo seco rapidamente sem comprometer a definição dos cachos.',
-    price: '20',
+    price: '10',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-secagem.jpg',
   },
@@ -114,7 +122,8 @@ const servicesList: ServiceItem[] = [
     title: 'Alta Frequência',
     description:
       'Cuidado complementar para o couro cabeludo, integrado à experiência de tratamento dos fios.',
-    price: '30',
+    price: '60',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-alta-frequencia.jpg',
   },
@@ -124,7 +133,8 @@ const servicesList: ServiceItem[] = [
     title: 'Photon Lizze',
     description:
       'Tecnologia de cuidado capilar com Photon Lizze, conforme a necessidade dos fios.',
-    price: '10',
+    price: '30',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-photon-lizze.jpg',
   },
@@ -134,7 +144,8 @@ const servicesList: ServiceItem[] = [
     title: 'Higienização',
     description:
       'Higienização dos fios e do couro cabeludo como etapa de cuidado e preparação.',
-    price: '30',
+    price: '10',
+    pricePrefix: 'Desde',
     priceSuffix: '€',
     image: '/images/servico-higienizacao.jpg',
   },
